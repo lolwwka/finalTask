@@ -1,0 +1,31 @@
+spring:
+  autoconfigure:
+    exclude: org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    username: postgres
+    password: jmgapja.
+    url: jdbc:postgresql://localhost:5432/postgres
+    hikari:
+      minimum-idle: 10
+      maximum-pool-size: 20
+  jpa:
+    show-sql: true
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
+logging:
+  file:
+    name: './logs/application-debug.log'
+  pattern:
+    console: "%d %-5level %logger : %msg%n"
+    file: "%d %-5level [%thread] %logger : %msg%n"
+  level:
+    com:
+      example:
+        finalproject: DEBUG
+    org.springframework.web: DEBUG
+    org.hibernate: ERROR
+server:
+  servlet:
+    context-path: /my-application
