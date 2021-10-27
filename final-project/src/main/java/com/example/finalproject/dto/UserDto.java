@@ -12,7 +12,7 @@ public class UserDto {
     @Email
     private String email;
     @NotBlank
-    @Size(min = 10, max = 25)
+    @Size(min = 5, max = 25)
     private String password;
 
     public String getEmail() {

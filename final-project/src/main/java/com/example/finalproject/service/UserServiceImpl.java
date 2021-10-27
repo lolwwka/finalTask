@@ -39,8 +39,8 @@ public class UserServiceImpl implements UserService{
         if(userRepository.findUsersByEmail(userDto.getEmail())!= null){
             throw new RuntimeException("User is already exists");
         }
-        sendCodeEmail(user);
         userRepository.save(user);
+        sendCodeEmail(user);
         return true;
     }
 

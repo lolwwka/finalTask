@@ -12,6 +12,8 @@ import {environment} from "../environments/environment";
 export class ConfirmRegisterComponent implements AfterViewInit{
   code: any;
   private querySubscription: Subscription;
+  Href = '';
+  name = '';
 
   constructor(private app: AppService, private http: HttpClient, private router: Router, private route: ActivatedRoute) {
     this.querySubscription = route.queryParams.subscribe(
@@ -27,7 +29,21 @@ export class ConfirmRegisterComponent implements AfterViewInit{
         = 'We are send an email to your mail. Follow the link to confirm registration'
     }
     else {
-      this.router.navigateByUrl(environment.apiUrl + '/register/' + this.code)
+      this.http.post(environment.apiUrl + '/register/' + this.code,{})
+        .toPromise()
+        .then((data:any)=>{
+          if(data.confirmed != false){
+            // @ts-ignore
+            document.getElementById('bigText').textContent = 'You have been registered'
+          }
+          else {
+            // @ts-ignore
+            document.getElementById('bigText').innerHTML = 'Code is not active, you may be already verified'
+          }
+          // @ts-ignore
+          document.getElementById('link').innerHTML = 'Login';
+          this.Href = 'http://localhost:4200/login';
+        });
     }
   }
 }

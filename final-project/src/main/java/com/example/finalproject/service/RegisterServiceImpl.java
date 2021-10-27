@@ -36,7 +36,7 @@ public class RegisterServiceImpl implements RegisterService{
         char[] chars = keyCode.toString().toCharArray();
         keyCode = new StringBuilder();
         for (int i = 0; i < chars.length; i++) {
-            if (chars[i] == '/') chars[i] = 0;
+            if (chars[i] == '/') chars[i] = '0';
             keyCode.append(chars[i]);
         }
         return keyCode.toString();
