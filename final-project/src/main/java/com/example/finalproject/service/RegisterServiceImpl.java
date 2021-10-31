@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 
 
 @Service
-public class RegisterServiceImpl implements RegisterService{
+public class RegisterServiceImpl implements RegisterService {
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
 
@@ -19,7 +19,7 @@ public class RegisterServiceImpl implements RegisterService{
     @Override
     public boolean checkCode(String code) {
         User user = userRepository.findByKeyCode(code);
-        if(user != null){
+        if (user != null) {
             user.setAuthenticated(true);
             user.setKeyCode(null);
             userRepository.flush();
@@ -32,7 +32,7 @@ public class RegisterServiceImpl implements RegisterService{
     public String generateUserCode(String email) {
         StringBuilder keyCode = new StringBuilder(passwordEncoder.encode(email));
         User user = userRepository.findByKeyCode(keyCode.toString());
-        if(user!= null) generateUserCode(email);
+        if (user != null) generateUserCode(email);
         char[] chars = keyCode.toString().toCharArray();
         keyCode = new StringBuilder();
         for (int i = 0; i < chars.length; i++) {
@@ -41,4 +41,5 @@ public class RegisterServiceImpl implements RegisterService{
         }
         return keyCode.toString();
     }
+
 }

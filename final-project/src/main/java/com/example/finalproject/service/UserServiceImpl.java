@@ -13,7 +13,7 @@ import java.util.HashSet;
 import java.util.List;
 
 @Service
-public class UserServiceImpl implements UserService{
+public class UserServiceImpl implements UserService {
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
     private final RoleRepository roleRepository;
@@ -36,11 +36,11 @@ public class UserServiceImpl implements UserService{
     @Override
     public boolean addUser(UserDto userDto) {
         User user = convertUser(userDto);
-        if(userRepository.findUsersByEmail(userDto.getEmail())!= null){
+        if (userRepository.findUsersByEmail(userDto.getEmail()) != null) {
             throw new RuntimeException("User is already exists");
         }
         userRepository.save(user);
-        sendCodeEmail(user);
+        new Thread(() -> sendCodeEmail(user)).start();
         return true;
     }
 
@@ -54,7 +54,7 @@ public class UserServiceImpl implements UserService{
         return false;
     }
 
-    private User convertUser(UserDto userDto){
+    private User convertUser(UserDto userDto) {
         User user = new User();
         user.setEmail(userDto.getEmail());
         user.setPassword(passwordEncoder.encode(userDto.getPassword()));

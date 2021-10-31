@@ -15,7 +15,7 @@ public class AuthController {
     private static final Logger LOGGER = LoggerFactory.getLogger(AuthController.class);
 
     @PostMapping
-    public UserDto authenticate(Principal principal){
+    public UserDto authenticate(Principal principal) {
         LOGGER.debug("User {} logged in", principal.getName());
         UserDto user = new UserDto();
         user.setEmail(principal.getName());

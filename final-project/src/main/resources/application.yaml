@@ -29,3 +29,6 @@ logging:
 server:
   servlet:
     context-path: /my-application
+server-mail:
+  password: ${password}
+  login: ${login}

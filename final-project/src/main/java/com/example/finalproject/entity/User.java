@@ -12,7 +12,7 @@ import java.util.Set;
 @Entity
 @Table(name = "visitor")
 @NamedQuery(name = "User.findByKeyCode",
-query = "select u from User u where u.keyCode = :keyCode")
+        query = "select u from User u where u.keyCode = :keyCode")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

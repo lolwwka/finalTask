@@ -1,4 +1,4 @@
-package com.example.finalproject.configuration;
+package com.example.finalproject.service;
 
 import com.example.finalproject.dao.UserRepository;
 import com.example.finalproject.entity.Role;
@@ -20,12 +20,11 @@ public class UserDetailServiceImpl implements UserDetailsService {
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         User user = userRepository.findUsersByEmail(username);
         org.springframework.security.core.userdetails.User.UserBuilder builder = null;
-        if(user!= null){
+        if (user != null) {
             builder = org.springframework.security.core.userdetails.User.withUsername(username);
-            if(user.getAuthenticated()) {
+            if (user.getAuthenticated()) {
                 builder.password(user.getPassword());
-            }
-            else builder.password("123");
+            } else builder.password("123");
             builder.roles(user.getRoles().stream().map(Role::getName).toArray(size -> new String[size]));
         } else {
             throw new UsernameNotFoundException("User not found");

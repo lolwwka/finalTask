@@ -1,5 +1,6 @@
 package com.example.finalproject.configuration;
 
+import com.example.finalproject.properties.MailProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.mail.javamail.JavaMailSender;
@@ -9,14 +10,20 @@ import java.util.Properties;
 
 @Configuration
 public class CustomMailConfiguration {
+    private final MailProperties mailProperties;
+
+    public CustomMailConfiguration(MailProperties mailProperties) {
+        this.mailProperties = mailProperties;
+    }
+
     @Bean
     public JavaMailSender getJavaMailSender() {
         JavaMailSenderImpl mailSender = new JavaMailSenderImpl();
         mailSender.setHost("smtp.gmail.com");
         mailSender.setPort(587);
 
-        mailSender.setUsername("lolwwka@gmail.com");
-        mailSender.setPassword("60760253903949");
+        mailSender.setUsername(mailProperties.getLogin());
+        mailSender.setPassword(mailProperties.getPassword());
 
         Properties props = mailSender.getJavaMailProperties();
         props.put("mail.transport.protocol", "smtp");

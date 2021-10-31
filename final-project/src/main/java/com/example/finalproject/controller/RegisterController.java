@@ -35,10 +35,9 @@ public class RegisterController {
     @PostMapping(value = "/{code}")
     public Map<String, Boolean> checkCode(@PathVariable(value = "code") String code) {
         Map<String, Boolean> results = new HashMap<>();
-        if(registerService.checkCode(code)){
-            results.put("confirmed",true);
-        }
-        else results.put("confirmed", false);
+        if (registerService.checkCode(code)) {
+            results.put("confirmed", true);
+        } else results.put("confirmed", false);
         return results;
     }
 }
