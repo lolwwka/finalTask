@@ -12,6 +12,7 @@ import javax.mail.internet.MimeMessage;
 public class CustomEmailServiceImpl implements CustomEmailService {
     private final JavaMailSender emailSender;
     private final MailProperties mailProperties;
+
     public CustomEmailServiceImpl(JavaMailSender emailSender, MailProperties mailProperties) {
         this.emailSender = emailSender;
         this.mailProperties = mailProperties;

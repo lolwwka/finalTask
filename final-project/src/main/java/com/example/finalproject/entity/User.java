@@ -6,6 +6,7 @@ import org.springframework.validation.annotation.Validated;
 import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
+import java.util.List;
 import java.util.Set;
 
 @Validated
@@ -31,11 +32,8 @@ public class User {
             inverseJoinColumns = @JoinColumn(name = "role_id")
     )
     private Set<Role> roles;
-
-
-    public User(String email) {
-        this.email = email;
-    }
+    @OneToMany(mappedBy = "user")
+    private List<Bet> bets;
 
     public User() {
     }
@@ -90,6 +88,14 @@ public class User {
 
     public void setAuthenticated(Boolean authenticated) {
         this.authenticated = authenticated;
+    }
+
+    public List<Bet> getBets() {
+        return bets;
+    }
+
+    public void setBets(List<Bet> bets) {
+        this.bets = bets;
     }
 }
 

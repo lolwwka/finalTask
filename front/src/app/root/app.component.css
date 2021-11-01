@@ -1,0 +1,14 @@
+.container {
+  text-align: center;
+  min-height: 100%;
+  margin-bottom: -80px;
+}
+.natureImage{
+  background-image: url("https://mdn.mozillademos.org/files/6457/mdn_logo_only_color.png");
+}
+.customLabel{
+  text-align: center;
+  font-size: 200%;
+  color: blueviolet;
+  font-style: normal;
+}

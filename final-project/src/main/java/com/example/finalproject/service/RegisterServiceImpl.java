@@ -1,7 +1,7 @@
 package com.example.finalproject.service;
 
-import com.example.finalproject.dao.UserRepository;
 import com.example.finalproject.entity.User;
+import com.example.finalproject.repository.UserRepository;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 

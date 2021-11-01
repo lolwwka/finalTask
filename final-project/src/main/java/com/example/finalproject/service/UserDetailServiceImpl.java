@@ -1,8 +1,8 @@
 package com.example.finalproject.service;
 
-import com.example.finalproject.dao.UserRepository;
 import com.example.finalproject.entity.Role;
 import com.example.finalproject.entity.User;
+import com.example.finalproject.repository.UserRepository;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;

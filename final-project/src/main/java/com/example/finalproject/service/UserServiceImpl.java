@@ -1,10 +1,10 @@
 package com.example.finalproject.service;
 
-import com.example.finalproject.dao.RoleRepository;
-import com.example.finalproject.dao.UserRepository;
 import com.example.finalproject.dto.UserDto;
 import com.example.finalproject.entity.Role;
 import com.example.finalproject.entity.User;
+import com.example.finalproject.repository.RoleRepository;
+import com.example.finalproject.repository.UserRepository;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
