@@ -9,10 +9,11 @@ import {environment} from "../../environments/environment";
   selector: 'confirmRegister.component',
   templateUrl: 'confirmRegister.component.html',
 })
-export class ConfirmRegisterComponent implements AfterViewInit{
+export class ConfirmRegisterComponent implements AfterViewInit {
   code: any;
   private querySubscription: Subscription;
   Href = '';
+
   constructor(private app: AppService, private http: HttpClient, private router: Router, private route: ActivatedRoute) {
     this.querySubscription = route.queryParams.subscribe(
       (queryParam: any) => {
@@ -20,21 +21,20 @@ export class ConfirmRegisterComponent implements AfterViewInit{
       }
     );
   }
+
   ngAfterViewInit() {
-    if(this.code == 125){
+    if (this.code == 125) {
       // @ts-ignore
       document.getElementById(`bigText`).textContent
         = 'We are send an email to your mail. Follow the link to confirm registration'
-    }
-    else {
-      this.http.post(environment.apiUrl + '/register/' + this.code,{})
+    } else {
+      this.http.post(environment.apiUrl + '/register/' + this.code, {})
         .toPromise()
-        .then((data:any)=>{
-          if(data.confirmed != false){
+        .then((data: any) => {
+          if (data.confirmed != false) {
             // @ts-ignore
             document.getElementById('bigText').textContent = 'You have been registered'
-          }
-          else {
+          } else {
             // @ts-ignore
             document.getElementById('bigText').innerHTML = 'Code is not active, you may be already verified'
           }

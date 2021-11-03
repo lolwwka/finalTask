@@ -29,6 +29,7 @@ logging:
 server:
   servlet:
     context-path: /my-application
+  port: ${PORT:8080}
 server-mail:
   password: ${password}
   login: ${login}

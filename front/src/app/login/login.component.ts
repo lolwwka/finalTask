@@ -16,6 +16,7 @@ export class LoginComponent {
 
   constructor(private app: AppService, private http: HttpClient, private router: Router) {
   }
+
   login() {
     this.app.authenticate(this.credentials, () => {
       this.router.navigateByUrl('/');
@@ -24,7 +25,8 @@ export class LoginComponent {
     });
     return false;
   }
-  register(){
+
+  register() {
     this.router.navigateByUrl('/register');
   }
 }

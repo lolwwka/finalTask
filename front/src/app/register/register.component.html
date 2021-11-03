@@ -12,7 +12,7 @@
 </div>
 <br>
 <form (submit)="register()" role="form">
-  <mat-form-field appearance="fill">
+  <mat-form-field appearance="outline">
     <mat-label for="email">Email</mat-label>
     <input matInput [(ngModel)]="credentials.email"
            placeholder="Ex. myemail@outlook.com"
@@ -20,7 +20,7 @@
            type="text"/>
   </mat-form-field>
   <br>
-  <mat-form-field appearance="fill">
+  <mat-form-field appearance="outline">
     <mat-label for="password">Password</mat-label>
     <input matInput [(ngModel)]="credentials.password"
            placeholder="Ex. SoHardPass"

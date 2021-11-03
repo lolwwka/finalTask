@@ -11,20 +11,21 @@ import {environment} from "../../environments/environment";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  constructor(private app: AppService, private http: HttpClient, private router: Router, location:Location) {
+
+  constructor(private app: AppService, private http: HttpClient, private router: Router, location: Location) {
     this.app.authenticate(undefined, () => {
-      this.router.navigateByUrl('/home');
+      this.router.navigateByUrl('');
     }, () => {
-      if(window.location.pathname == '/confirm'){
+      if (window.location.pathname == '/confirm') {
         this.router.navigateByUrl(location.path());
-      }
-      else {
+      } else {
         this.router.navigateByUrl('/login');
       }
     });
   }
 
   logout() {
+    this.app.authenticated = false;
     return this.http.post(environment.apiUrl + '/logout', {}, {withCredentials: true}).subscribe(() => {
       this.router.navigateByUrl('/login');
     });
@@ -32,5 +33,11 @@ export class AppComponent {
 
   authenticated() {
     return this.app.authenticated;
+  }
+
+  getUserName() {
+    let username = this.app.userName;
+    let modifiedUsername = username.split("@", 1);
+    return modifiedUsername[0];
   }
 }

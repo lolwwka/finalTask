@@ -1,17 +1,17 @@
 import {Component} from '@angular/core';
 import {AppService} from '../root/app.service';
-import {HttpClient} from '@angular/common/http';
-import {Router} from '@angular/router';
+import {AppComponent} from "../root/app.component";
 
 @Component({
-  selector: 'main.component',
-  templateUrl: 'main.component.html',
+  templateUrl: 'main.component.html'
 })
 export class MainComponent {
-  events : Array<any> = [];
+  events: Array<any> = [];
   error = '';
+  username = '';
 
-  constructor(private app: AppService) {
+  constructor(private app: AppService, private appComponent: AppComponent) {
+    this.username = appComponent.getUserName();
     app.getEvents((data: any) => this.events = <Array<any>>data,
       (error: any) => this.error = error.message);
   }

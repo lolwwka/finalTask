@@ -1,15 +1,14 @@
 package com.example.finalproject.controller;
 
+import com.example.finalproject.dto.Result;
 import com.example.finalproject.dto.UserDto;
-import com.example.finalproject.service.RegisterService;
-import com.example.finalproject.service.UserService;
+import com.example.finalproject.service.register.RegisterService;
+import com.example.finalproject.service.user.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
-import java.util.HashMap;
-import java.util.Map;
 
 @RestController
 @RequestMapping("/register")
@@ -24,20 +23,18 @@ public class RegisterController {
     }
 
     @PostMapping()
-    public Map<String, String> addUser(@Valid @RequestBody UserDto user) {
+    public Result addUser(@Valid @RequestBody UserDto user) {
         LOGGER.debug("Adding new user[{}]", user);
         userService.addUser(user);
-        HashMap<String, String> map = new HashMap<>();
-        map.put("callback", "true");
-        return map;
+        Result result = new Result();
+        result.setResult(true);
+        return result;
     }
 
     @PostMapping(value = "/{code}")
-    public Map<String, Boolean> checkCode(@PathVariable(value = "code") String code) {
-        Map<String, Boolean> results = new HashMap<>();
-        if (registerService.checkCode(code)) {
-            results.put("confirmed", true);
-        } else results.put("confirmed", false);
-        return results;
+    public Result checkCode(@PathVariable(value = "code") String code) {
+        Result result = new Result();
+        result.setResult(registerService.checkCode(code));
+        return result;
     }
 }

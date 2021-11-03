@@ -17,6 +17,7 @@ import {MatGridListModule} from "@angular/material/grid-list";
 import {MatInputModule} from '@angular/material/input';
 import {MatIconModule} from "@angular/material/icon";
 import {MatListModule} from "@angular/material/list";
+import {EventComponent} from "../event/event.component";
 
 
 @Injectable()
@@ -35,7 +36,9 @@ const routes: Routes = [
   {path: 'home', component: MainComponent},
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
-  {path: 'confirm', component: ConfirmRegisterComponent}
+  {path: 'confirm', component: ConfirmRegisterComponent},
+  {path: 'event', component: EventComponent},
+  {path: 'event/:id', component: EventComponent}
 ];
 
 @NgModule({
@@ -44,7 +47,8 @@ const routes: Routes = [
     LoginComponent,
     RegisterComponent,
     ConfirmRegisterComponent,
-    MainComponent
+    MainComponent,
+    EventComponent
   ],
   imports: [
     RouterModule.forRoot(routes),

@@ -14,6 +14,13 @@ public class Bet {
     @JoinColumn(name = "user_id")
     private User user;
 
+    public Bet() {
+    }
+
+    public Bet(long amount) {
+        this.amount = amount;
+    }
+
     public long getAmount() {
         return amount;
     }

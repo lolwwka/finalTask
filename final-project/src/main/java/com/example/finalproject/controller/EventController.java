@@ -1,9 +1,9 @@
 package com.example.finalproject.controller;
 
-import com.example.finalproject.dto.EventDto;
-import com.example.finalproject.dto.EventWithTeams;
-import com.example.finalproject.entity.Event;
-import com.example.finalproject.service.EventService;
+import com.example.finalproject.dto.event.EventDto;
+import com.example.finalproject.dto.event.EventDtoWithBets;
+import com.example.finalproject.dto.event.EventWithTeams;
+import com.example.finalproject.service.event.EventService;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -34,5 +34,11 @@ public class EventController {
     @GetMapping
     public List<EventWithTeams> getAllEvents() {
         return eventService.getAllEvents();
+    }
+
+    @GetMapping(value = "/{id}")
+    public EventDtoWithBets getEvent(@PathVariable(value = "id") long eventId) {
+        System.out.println();
+        return eventService.getEvent(eventId);
     }
 }

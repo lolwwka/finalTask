@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {AppService} from '../root/app.service';
-import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
+import {HttpClient} from '@angular/common/http';
 import {Router} from '@angular/router';
 import {environment} from "../../environments/environment";
 
@@ -26,12 +26,12 @@ export class RegisterComponent {
       password: this.credentials.password
     })
       .toPromise()
-      .then((data : any)=>{
-        if (data.callback == 'true'){
+      .then((data: any) => {
+        if (data.result == true) {
           this.router.navigateByUrl("/confirm?code=125")
         }
       })
-      .catch(() =>{
+      .catch(() => {
         this.error = true;
       });
   }

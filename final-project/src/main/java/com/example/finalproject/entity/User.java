@@ -12,8 +12,6 @@ import java.util.Set;
 @Validated
 @Entity
 @Table(name = "visitor")
-@NamedQuery(name = "User.findByKeyCode",
-        query = "select u from User u where u.keyCode = :keyCode")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,6 +23,20 @@ public class User {
     private String password;
     private String keyCode;
     private boolean authenticated;
+    @Column(name = "balance")
+    private long balance;
+
+    public long getBalance() {
+        return balance;
+    }
+
+    public void setBalance(long balance) {
+        this.balance = balance;
+    }
+
+    public long getId() {
+        return id;
+    }
 
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "visitor_role",

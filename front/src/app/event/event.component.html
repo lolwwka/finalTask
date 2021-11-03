@@ -1,0 +1,76 @@
+<body style="width: 1080px">
+<div style="
+  background-color: sandybrown;
+  color: darkred;
+  width: 100vw;
+  position: absolute;">
+  <div>
+    <p style="
+         font-size: 2.5em;
+         text-align: center;
+         height: 1em;
+         margin-top: 1em">Tournament : {{event.tournament}}</p>
+  </div>
+  <mat-grid-list cols="5" rowHeight="70px" [style.background]="'red'">
+    <mat-grid-tile colspan="2">
+      <b style="
+        color: #10457f;
+        font-size: 2.5em;
+        text-align: center">{{event.firstTeam}}</b>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="1">
+      <b style="
+        color: lawngreen;
+        font-size: 2.5em;
+        text-align: center">VS</b>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="2">
+      <b style="
+        color: #10457f;
+        font-size: 2.5em;
+        text-align: center">{{event.secondTeam}}</b>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="2">
+      <b style="
+        color: #10457f;
+        font-size: 2.5em;
+        text-align: center">{{event.firstTeamAmount}}</b>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="1">
+      <button mat-flat-button color="primary" (click)="setBet(firstTeam.value,secondTeam.value)">Submit</button>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="2">
+      <b style="
+        color: #10457f;
+        font-size: 2.5em;
+        text-align: center">{{event.secondTeamAmount}}</b>
+    </mat-grid-tile>
+  </mat-grid-list>
+  <mat-grid-list cols="6" rowHeight="80" [style.background]="'yellow'">
+    <mat-grid-tile colspan="1">
+      <b style="font-size: 2.5em">{{firstIndex}}</b>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="2">
+      <mat-form-field appearance="outline">
+        <mat-label>{{event.firstTeam}}</mat-label>
+        <input #firstTeam matInput placeholder="100000">
+      </mat-form-field>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="2">
+      <mat-form-field appearance="outline">
+        <mat-label>{{event.secondTeam}}</mat-label>
+        <input #secondTeam matInput placeholder="100000">
+      </mat-form-field>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="1">
+      <b style="font-size: 2.5em">{{secondIndex}}</b>
+    </mat-grid-tile>
+  </mat-grid-list>
+  <div style="
+         font-size: 2.5em;
+         text-align: center;
+         height: 2em;
+         margin-top: 1em"
+       [hidden]="!exception">{{error}}</div>
+</div>
+</body>

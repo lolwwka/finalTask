@@ -1,20 +1,30 @@
+<html>
+<body style="background-color: sandybrown;
+  color: darkred">
 <h1>Greeting</h1>
 <div [hidden]="!authenticated()">
+  <p style="font-size: 2em">Dear {{username}}</p>
   <div [hidden]="!error">
     <p class="danger">Error: {{error}}</p>
   </div>
-  <mat-list>
-    <div *ngFor="let event of events">
-      <mat-list-item >Tournament: {{event.tournamentName}}</mat-list-item>
-      <mat-list-item>First team : {{event.firstTeamName}} Second team : {{event.secondTeamName}}</mat-list-item>
-      <mat-list-item>Bets</mat-list-item>
-      <mat-list-item>{{event.firstTeamAmount}} / {{event.secondTeamAmount}}</mat-list-item>
-      <a mat-button color="primary" [routerLink]="['/post/' + event.id]">
+  <div *ngFor="let event of events">
+    <mat-list>
+      <mat-list-item style="
+      font-size: 1.5em;
+      height: 15px">
+        Tournament: {{event.tournamentName}}
+      </mat-list-item>
+      <mat-list-item>
+        First team : {{event.firstTeamName}} Second team : {{event.secondTeamName}}
+      </mat-list-item>
+      <a mat-button color="primary" [routerLink]="['/event', event.id]">
         <mat-icon>right</mat-icon>
         Go to event</a>
-    </div>
-  </mat-list>
+    </mat-list>
+  </div>
 </div>
 <div [hidden]="authenticated()">
-  <p>Login to see your posts</p>
+  <p>Login to see bets</p>
 </div>
+</body>
+</html>

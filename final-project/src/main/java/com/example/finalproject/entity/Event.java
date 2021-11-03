@@ -4,9 +4,7 @@ import org.springframework.validation.annotation.Validated;
 
 import javax.persistence.*;
 import javax.validation.constraints.Size;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 
 @Validated
 @Entity
@@ -43,20 +41,16 @@ public class Event {
         this.secondTeamAmount = secondTeamAmount;
     }
 
- /*   public Set<Team> getTeams() {
-        return teams;
-    }
-
-    public void setTeams(Set<Team> teams) {
-        this.teams = teams;
-    }*/
-
     public List<Team> getTeams() {
         return teams;
     }
 
     public void setTeams(List<Team> teams) {
         this.teams = teams;
+    }
+
+    public long getId() {
+        return id;
     }
 
     public String getTournamentName() {

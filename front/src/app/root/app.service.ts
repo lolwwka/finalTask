@@ -6,9 +6,11 @@ import {environment} from "../../environments/environment";
 export class AppService {
   authenticated = false;
   userName = "";
+  userId = 0;
 
   constructor(private http: HttpClient) {
   }
+
   authenticate(credentials: any, successCallback: any, failureCallback: any) {
     const headers = new HttpHeaders(credentials ? {
       authorization: 'Basic ' + btoa(credentials.username + ':' + credentials.password)
@@ -17,7 +19,8 @@ export class AppService {
       .toPromise()
       .then((response: any) => {
         this.authenticated = true;
-        // this.userName = credentials.username;
+        this.userName = response.email;
+        // this.userId = response.id;
         return successCallback && successCallback();
       }).catch(() => {
         this.authenticated = false;
@@ -31,8 +34,18 @@ export class AppService {
       .toPromise()
       .then((data: any) => {
         return successCallback && successCallback(data)
-      }).catch((e) =>{
-        return failureCallback && failureCallback(e)
+      }).catch((e) => {
+      return failureCallback && failureCallback(e)
+    });
+  }
+
+  getEvent(id: any, successCallback: any, failureCallback: any) {
+    this.http.get(environment.apiUrl + '/event/' + id, {})
+      .toPromise()
+      .then((data: any) => {
+        return successCallback && successCallback(data)
+      }).catch((e) => {
+      return failureCallback && failureCallback(e)
     });
   }
 }
