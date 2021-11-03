@@ -36,9 +36,14 @@ export class EventComponent {
       this.exception = true;
       return;
     }
-    let teamName : any;
-    let betValue : number;
-    if(firstTeamBetValue !== ''){
+    if (Number(firstTeamBetValue) < 0 || Number(secondTeamBetValue) < 0) {
+      this.error = 'Bet can\'t be < 0 ';
+      this.exception = true;
+      return;
+    }
+    let teamName: any;
+    let betValue: number;
+    if (firstTeamBetValue !== '') {
       teamName = this.event.firstTeam;
       betValue = Number(firstTeamBetValue)
     } else {
@@ -46,14 +51,14 @@ export class EventComponent {
       betValue = Number(secondTeamBetValue)
     }
     this.http.post(environment.apiUrl + "/bet", {
-      teamName : teamName,
-      betValue :betValue,
-      eventId : this.eventId,
-      userMail : this.app.userName
+      teamName: teamName,
+      betValue: betValue,
+      eventId: this.eventId,
+      userMail: this.app.userName
     })
       .toPromise()
-      .then((data : any) => {
-        if(data.exception == true){
+      .then((data: any) => {
+        if (data.exception == true) {
           this.error = 'You already made 3 bets'
           this.exception = true;
           return;
@@ -62,12 +67,17 @@ export class EventComponent {
         this.event.secondTeamAmount = data.secondTeamAmount;
         this.setIndexes();
       })
-      .catch((e) =>{
+      .catch((e) => {
         this.error = e;
       });
     this.exception = false;
   }
-  setIndexes(){
+
+  authenticated() {
+    return this.app.authenticated;
+  }
+
+  setIndexes() {
     let totalBets = this.event.firstTeamAmount + this.event.secondTeamAmount;
     let usersAmount = totalBets - this.profit * totalBets;
     if (this.event.firstTeamAmount == 0) {
@@ -81,7 +91,7 @@ export class EventComponent {
       this.secondIndex = 0;
       return;
     }
-    this.firstIndex = new Intl.NumberFormat('en-US',{maximumSignificantDigits: 3}).format(usersAmount / this.event.firstTeamAmount);
-    this.secondIndex = new Intl.NumberFormat('en-US',{maximumSignificantDigits: 3}).format(usersAmount / this.event.secondTeamAmount);
+    this.firstIndex = new Intl.NumberFormat('en-US', {maximumSignificantDigits: 3}).format(usersAmount / this.event.firstTeamAmount);
+    this.secondIndex = new Intl.NumberFormat('en-US', {maximumSignificantDigits: 3}).format(usersAmount / this.event.secondTeamAmount);
   }
 }

@@ -5,7 +5,7 @@
       BetPage</a>
   </mat-grid-tile>
   <mat-grid-tile colspan="1">
-    <a mat-fab [routerLink]="['/user/' + getUserName()]">
+    <a mat-fab [routerLink]="['/profile']">
       <mat-icon>face</mat-icon>
       Profile</a>
   </mat-grid-tile>
@@ -17,7 +17,7 @@
   </mat-grid-tile>
 </mat-grid-list>
 
-<div class="container">
+<div class="container" style="height: 100%">
   <div class="nav-push"></div>
   <router-outlet></router-outlet>
   <div class="push"></div>

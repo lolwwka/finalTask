@@ -1,0 +1,146 @@
+2021-11-04 00:13:11,246 INFO  [main] com.example.finalproject.FinalProjectApplication : Starting FinalProjectApplication using Java 11.0.11 on DESKTOP-AF116VG with PID 18724 (D:\Courses3RD\final-project-all\final-project\target\classes started by Андрей in D:\Courses3RD\final-project-all\final-project)
+2021-11-04 00:13:11,246 DEBUG [main] com.example.finalproject.FinalProjectApplication : Running with Spring Boot v2.5.5, Spring v5.3.10
+2021-11-04 00:13:11,246 INFO  [main] com.example.finalproject.FinalProjectApplication : No active profile set, falling back to default profiles: default
+2021-11-04 00:13:12,011 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-11-04 00:13:12,121 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 93 ms. Found 5 JPA repository interfaces.
+2021-11-04 00:13:12,823 INFO  [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer : Tomcat initialized with port(s): 8080 (http)
+2021-11-04 00:13:12,823 INFO  [main] org.apache.catalina.core.StandardService : Starting service [Tomcat]
+2021-11-04 00:13:12,823 INFO  [main] org.apache.catalina.core.StandardEngine : Starting Servlet engine: [Apache Tomcat/9.0.53]
+2021-11-04 00:13:12,963 INFO  [main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/my-application] : Initializing Spring embedded WebApplicationContext
+2021-11-04 00:13:12,963 INFO  [main] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1624 ms
+2021-11-04 00:13:13,385 INFO  [main] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Starting...
+2021-11-04 00:13:13,495 INFO  [main] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Start completed.
+2021-11-04 00:13:14,432 INFO  [main] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-11-04 00:13:14,559 WARN  [main] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-11-04 00:13:15,185 INFO  [main] org.springframework.security.web.DefaultSecurityFilterChain : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@167bb934, org.springframework.security.web.context.SecurityContextPersistenceFilter@5513a46b, org.springframework.security.web.header.HeaderWriterFilter@230d013b, org.springframework.security.web.authentication.logout.LogoutFilter@488279d3, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@36d5c2ce, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5703c1fb, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@52c27d53, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3b3f62d7, org.springframework.security.web.session.SessionManagementFilter@73fe7483, org.springframework.security.web.access.ExceptionTranslationFilter@1fc8047f, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@62159fd]
+2021-11-04 00:13:15,323 DEBUG [main] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2021-11-04 00:13:15,385 DEBUG [main] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping : 11 mappings in 'requestMappingHandlerMapping'
+2021-11-04 00:13:15,416 DEBUG [main] org.springframework.web.servlet.handler.SimpleUrlHandlerMapping : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2021-11-04 00:13:15,416 DEBUG [main] org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2021-11-04 00:13:15,526 INFO  [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer : Tomcat started on port(s): 8080 (http) with context path '/my-application'
+2021-11-04 00:13:15,541 INFO  [main] com.example.finalproject.FinalProjectApplication : Started FinalProjectApplication in 5.059 seconds (JVM running for 6.849)
+2021-11-04 00:13:20,431 INFO  [http-nio-8080-exec-1] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/my-application] : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-11-04 00:13:20,431 INFO  [http-nio-8080-exec-1] org.springframework.web.servlet.DispatcherServlet : Initializing Servlet 'dispatcherServlet'
+2021-11-04 00:13:20,431 DEBUG [http-nio-8080-exec-1] org.springframework.web.servlet.DispatcherServlet : Detected StandardServletMultipartResolver
+2021-11-04 00:13:20,431 DEBUG [http-nio-8080-exec-1] org.springframework.web.servlet.DispatcherServlet : Detected AcceptHeaderLocaleResolver
+2021-11-04 00:13:20,431 DEBUG [http-nio-8080-exec-1] org.springframework.web.servlet.DispatcherServlet : Detected FixedThemeResolver
+2021-11-04 00:13:20,431 DEBUG [http-nio-8080-exec-1] org.springframework.web.servlet.DispatcherServlet : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@575fe6da
+2021-11-04 00:13:20,431 DEBUG [http-nio-8080-exec-1] org.springframework.web.servlet.DispatcherServlet : Detected org.springframework.web.servlet.support.SessionFlashMapManager@412440c1
+2021-11-04 00:13:20,431 DEBUG [http-nio-8080-exec-1] org.springframework.web.servlet.DispatcherServlet : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2021-11-04 00:13:20,431 INFO  [http-nio-8080-exec-1] org.springframework.web.servlet.DispatcherServlet : Completed initialization in 0 ms
+2021-11-04 00:13:20,455 DEBUG [http-nio-8080-exec-1] org.springframework.web.servlet.DispatcherServlet : GET "/my-application/user/lolwwka", parameters={}
+2021-11-04 00:13:20,455 DEBUG [http-nio-8080-exec-1] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping : Mapped to com.example.finalproject.controller.UserController#getUserInfo(String)
+2021-11-04 00:13:20,720 DEBUG [http-nio-8080-exec-1] org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2021-11-04 00:13:20,720 DEBUG [http-nio-8080-exec-1] org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor : Writing [com.example.finalproject.dto.UserProfileDto@613ce5ef]
+2021-11-04 00:13:20,744 DEBUG [http-nio-8080-exec-1] org.springframework.web.servlet.DispatcherServlet : Completed 200 OK
+2021-11-04 00:13:41,130 INFO  [main] com.example.finalproject.FinalProjectApplication : Starting FinalProjectApplication using Java 11.0.11 on DESKTOP-AF116VG with PID 3244 (D:\Courses3RD\final-project-all\final-project\target\classes started by Андрей in D:\Courses3RD\final-project-all\final-project)
+2021-11-04 00:13:41,130 DEBUG [main] com.example.finalproject.FinalProjectApplication : Running with Spring Boot v2.5.5, Spring v5.3.10
+2021-11-04 00:13:41,130 INFO  [main] com.example.finalproject.FinalProjectApplication : No active profile set, falling back to default profiles: default
+2021-11-04 00:13:41,872 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-11-04 00:13:41,965 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 85 ms. Found 5 JPA repository interfaces.
+2021-11-04 00:13:42,775 INFO  [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer : Tomcat initialized with port(s): 8080 (http)
+2021-11-04 00:13:42,775 INFO  [main] org.apache.catalina.core.StandardService : Starting service [Tomcat]
+2021-11-04 00:13:42,775 INFO  [main] org.apache.catalina.core.StandardEngine : Starting Servlet engine: [Apache Tomcat/9.0.53]
+2021-11-04 00:13:42,928 INFO  [main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/my-application] : Initializing Spring embedded WebApplicationContext
+2021-11-04 00:13:42,928 INFO  [main] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1705 ms
+2021-11-04 00:13:43,425 INFO  [main] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Starting...
+2021-11-04 00:13:43,550 INFO  [main] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Start completed.
+2021-11-04 00:13:44,590 INFO  [main] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-11-04 00:13:44,715 WARN  [main] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-11-04 00:13:45,442 INFO  [main] org.springframework.security.web.DefaultSecurityFilterChain : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6fb219dd, org.springframework.security.web.context.SecurityContextPersistenceFilter@54e680fe, org.springframework.security.web.header.HeaderWriterFilter@2ae08750, org.springframework.security.web.authentication.logout.LogoutFilter@58945295, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@3922b297, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@167bb934, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@460aa24e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@570b85dd, org.springframework.security.web.session.SessionManagementFilter@36d5c2ce, org.springframework.security.web.access.ExceptionTranslationFilter@62159fd, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@41d53813]
+2021-11-04 00:13:45,614 DEBUG [main] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2021-11-04 00:13:45,692 DEBUG [main] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping : 11 mappings in 'requestMappingHandlerMapping'
+2021-11-04 00:13:45,715 DEBUG [main] org.springframework.web.servlet.handler.SimpleUrlHandlerMapping : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2021-11-04 00:13:45,730 DEBUG [main] org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2021-11-04 00:13:45,855 INFO  [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer : Tomcat started on port(s): 8080 (http) with context path '/my-application'
+2021-11-04 00:13:45,871 INFO  [main] com.example.finalproject.FinalProjectApplication : Started FinalProjectApplication in 5.54 seconds (JVM running for 7.643)
+2021-11-04 00:13:57,775 INFO  [http-nio-8080-exec-1] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/my-application] : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-11-04 00:13:57,775 INFO  [http-nio-8080-exec-1] org.springframework.web.servlet.DispatcherServlet : Initializing Servlet 'dispatcherServlet'
+2021-11-04 00:13:57,775 DEBUG [http-nio-8080-exec-1] org.springframework.web.servlet.DispatcherServlet : Detected StandardServletMultipartResolver
+2021-11-04 00:13:57,775 DEBUG [http-nio-8080-exec-1] org.springframework.web.servlet.DispatcherServlet : Detected AcceptHeaderLocaleResolver
+2021-11-04 00:13:57,775 DEBUG [http-nio-8080-exec-1] org.springframework.web.servlet.DispatcherServlet : Detected FixedThemeResolver
+2021-11-04 00:13:57,775 DEBUG [http-nio-8080-exec-1] org.springframework.web.servlet.DispatcherServlet : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@25fcdcc6
+2021-11-04 00:13:57,775 DEBUG [http-nio-8080-exec-1] org.springframework.web.servlet.DispatcherServlet : Detected org.springframework.web.servlet.support.SessionFlashMapManager@2fccd98f
+2021-11-04 00:13:57,775 DEBUG [http-nio-8080-exec-1] org.springframework.web.servlet.DispatcherServlet : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2021-11-04 00:13:57,775 INFO  [http-nio-8080-exec-1] org.springframework.web.servlet.DispatcherServlet : Completed initialization in 0 ms
+2021-11-04 00:13:57,807 DEBUG [http-nio-8080-exec-1] org.springframework.web.servlet.DispatcherServlet : GET "/my-application/user/lolwwka", parameters={}
+2021-11-04 00:13:57,815 DEBUG [http-nio-8080-exec-1] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping : Mapped to com.example.finalproject.controller.UserController#getUserInfo(String)
+2021-11-04 00:15:50,569 DEBUG [http-nio-8080-exec-1] org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2021-11-04 00:15:50,569 DEBUG [http-nio-8080-exec-1] org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor : Writing [com.example.finalproject.dto.UserProfileDto@5b5e3d71]
+2021-11-04 00:15:50,593 DEBUG [http-nio-8080-exec-1] org.springframework.web.servlet.DispatcherServlet : Completed 200 OK
+2021-11-04 00:15:50,867 INFO  [SpringApplicationShutdownHook] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-11-04 00:15:51,098 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Shutdown initiated...
+2021-11-04 00:15:51,161 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Shutdown completed.
+2021-11-04 00:17:15,970 INFO  [main] com.example.finalproject.FinalProjectApplication : Starting FinalProjectApplication using Java 11.0.11 on DESKTOP-AF116VG with PID 8992 (D:\Courses3RD\final-project-all\final-project\target\classes started by Андрей in D:\Courses3RD\final-project-all\final-project)
+2021-11-04 00:17:15,970 DEBUG [main] com.example.finalproject.FinalProjectApplication : Running with Spring Boot v2.5.5, Spring v5.3.10
+2021-11-04 00:17:15,970 INFO  [main] com.example.finalproject.FinalProjectApplication : No active profile set, falling back to default profiles: default
+2021-11-04 00:17:16,810 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-11-04 00:17:16,903 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 82 ms. Found 5 JPA repository interfaces.
+2021-11-04 00:17:17,597 INFO  [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer : Tomcat initialized with port(s): 8080 (http)
+2021-11-04 00:17:17,613 INFO  [main] org.apache.catalina.core.StandardService : Starting service [Tomcat]
+2021-11-04 00:17:17,613 INFO  [main] org.apache.catalina.core.StandardEngine : Starting Servlet engine: [Apache Tomcat/9.0.53]
+2021-11-04 00:17:17,751 INFO  [main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/my-application] : Initializing Spring embedded WebApplicationContext
+2021-11-04 00:17:17,751 INFO  [main] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1656 ms
+2021-11-04 00:17:18,217 INFO  [main] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Starting...
+2021-11-04 00:17:18,335 INFO  [main] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Start completed.
+2021-11-04 00:17:19,373 INFO  [main] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-11-04 00:17:19,494 WARN  [main] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-11-04 00:17:20,346 INFO  [main] org.springframework.security.web.DefaultSecurityFilterChain : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4b7a4c83, org.springframework.security.web.context.SecurityContextPersistenceFilter@176054b7, org.springframework.security.web.header.HeaderWriterFilter@6f87a7c7, org.springframework.security.web.authentication.logout.LogoutFilter@62dfe152, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@64e3bc2, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@24563809, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4fe9a396, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@768e40af, org.springframework.security.web.session.SessionManagementFilter@271a140c, org.springframework.security.web.access.ExceptionTranslationFilter@49cd08f9, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@6f7241c2]
+2021-11-04 00:17:20,471 DEBUG [main] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2021-11-04 00:17:20,534 DEBUG [main] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping : 11 mappings in 'requestMappingHandlerMapping'
+2021-11-04 00:17:20,580 DEBUG [main] org.springframework.web.servlet.handler.SimpleUrlHandlerMapping : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2021-11-04 00:17:20,580 DEBUG [main] org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2021-11-04 00:17:20,705 INFO  [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer : Tomcat started on port(s): 8080 (http) with context path '/my-application'
+2021-11-04 00:17:20,721 INFO  [main] com.example.finalproject.FinalProjectApplication : Started FinalProjectApplication in 5.584 seconds (JVM running for 8.127)
+2021-11-04 00:17:24,571 INFO  [http-nio-8080-exec-2] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/my-application] : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-11-04 00:17:24,571 INFO  [http-nio-8080-exec-2] org.springframework.web.servlet.DispatcherServlet : Initializing Servlet 'dispatcherServlet'
+2021-11-04 00:17:24,571 DEBUG [http-nio-8080-exec-2] org.springframework.web.servlet.DispatcherServlet : Detected StandardServletMultipartResolver
+2021-11-04 00:17:24,571 DEBUG [http-nio-8080-exec-2] org.springframework.web.servlet.DispatcherServlet : Detected AcceptHeaderLocaleResolver
+2021-11-04 00:17:24,571 DEBUG [http-nio-8080-exec-2] org.springframework.web.servlet.DispatcherServlet : Detected FixedThemeResolver
+2021-11-04 00:17:24,579 DEBUG [http-nio-8080-exec-2] org.springframework.web.servlet.DispatcherServlet : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@7d7f966f
+2021-11-04 00:17:24,579 DEBUG [http-nio-8080-exec-2] org.springframework.web.servlet.DispatcherServlet : Detected org.springframework.web.servlet.support.SessionFlashMapManager@78e7b83
+2021-11-04 00:17:24,579 DEBUG [http-nio-8080-exec-2] org.springframework.web.servlet.DispatcherServlet : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2021-11-04 00:17:24,579 INFO  [http-nio-8080-exec-2] org.springframework.web.servlet.DispatcherServlet : Completed initialization in 8 ms
+2021-11-04 00:17:24,597 DEBUG [http-nio-8080-exec-2] org.springframework.web.servlet.DispatcherServlet : GET "/my-application/user/lolwwka", parameters={}
+2021-11-04 00:17:24,605 DEBUG [http-nio-8080-exec-2] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping : Mapped to com.example.finalproject.controller.UserController#getUserInfo(String)
+2021-11-04 00:17:45,913 DEBUG [http-nio-8080-exec-2] org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2021-11-04 00:17:45,913 DEBUG [http-nio-8080-exec-2] org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor : Writing [com.example.finalproject.dto.UserProfileDto@14713287]
+2021-11-04 00:17:45,945 DEBUG [http-nio-8080-exec-2] org.springframework.web.servlet.DispatcherServlet : Completed 200 OK
+2021-11-04 00:17:46,192 INFO  [SpringApplicationShutdownHook] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-11-04 00:17:46,192 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Shutdown initiated...
+2021-11-04 00:17:46,192 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Shutdown completed.
+2021-11-04 00:17:54,372 INFO  [main] com.example.finalproject.FinalProjectApplication : Starting FinalProjectApplication using Java 11.0.11 on DESKTOP-AF116VG with PID 2560 (D:\Courses3RD\final-project-all\final-project\target\classes started by Андрей in D:\Courses3RD\final-project-all\final-project)
+2021-11-04 00:17:54,375 DEBUG [main] com.example.finalproject.FinalProjectApplication : Running with Spring Boot v2.5.5, Spring v5.3.10
+2021-11-04 00:17:54,375 INFO  [main] com.example.finalproject.FinalProjectApplication : No active profile set, falling back to default profiles: default
+2021-11-04 00:17:55,246 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-11-04 00:17:55,344 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 89 ms. Found 5 JPA repository interfaces.
+2021-11-04 00:17:56,069 INFO  [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer : Tomcat initialized with port(s): 8080 (http)
+2021-11-04 00:17:56,079 INFO  [main] org.apache.catalina.core.StandardService : Starting service [Tomcat]
+2021-11-04 00:17:56,079 INFO  [main] org.apache.catalina.core.StandardEngine : Starting Servlet engine: [Apache Tomcat/9.0.53]
+2021-11-04 00:17:56,200 INFO  [main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/my-application] : Initializing Spring embedded WebApplicationContext
+2021-11-04 00:17:56,200 INFO  [main] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1733 ms
+2021-11-04 00:17:56,611 INFO  [main] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Starting...
+2021-11-04 00:17:56,720 INFO  [main] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Start completed.
+2021-11-04 00:17:57,841 INFO  [main] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-11-04 00:17:57,945 WARN  [main] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-11-04 00:17:58,593 INFO  [main] org.springframework.security.web.DefaultSecurityFilterChain : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3b3f62d7, org.springframework.security.web.context.SecurityContextPersistenceFilter@7d2be319, org.springframework.security.web.header.HeaderWriterFilter@69c0bae6, org.springframework.security.web.authentication.logout.LogoutFilter@13866865, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@6369d01c, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2dfd157b, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@fb42c1c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5b3ee43e, org.springframework.security.web.session.SessionManagementFilter@5759edff, org.springframework.security.web.access.ExceptionTranslationFilter@7c39193f, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@28e8dee7]
+2021-11-04 00:17:58,734 DEBUG [main] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2021-11-04 00:17:58,780 DEBUG [main] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping : 11 mappings in 'requestMappingHandlerMapping'
+2021-11-04 00:17:58,812 DEBUG [main] org.springframework.web.servlet.handler.SimpleUrlHandlerMapping : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2021-11-04 00:17:58,812 DEBUG [main] org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2021-11-04 00:17:58,921 INFO  [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer : Tomcat started on port(s): 8080 (http) with context path '/my-application'
+2021-11-04 00:17:58,937 INFO  [main] com.example.finalproject.FinalProjectApplication : Started FinalProjectApplication in 5.491 seconds (JVM running for 7.278)
+2021-11-04 00:18:11,691 INFO  [http-nio-8080-exec-1] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/my-application] : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-11-04 00:18:11,691 INFO  [http-nio-8080-exec-1] org.springframework.web.servlet.DispatcherServlet : Initializing Servlet 'dispatcherServlet'
+2021-11-04 00:18:11,691 DEBUG [http-nio-8080-exec-1] org.springframework.web.servlet.DispatcherServlet : Detected StandardServletMultipartResolver
+2021-11-04 00:18:11,691 DEBUG [http-nio-8080-exec-1] org.springframework.web.servlet.DispatcherServlet : Detected AcceptHeaderLocaleResolver
+2021-11-04 00:18:11,691 DEBUG [http-nio-8080-exec-1] org.springframework.web.servlet.DispatcherServlet : Detected FixedThemeResolver
+2021-11-04 00:18:11,691 DEBUG [http-nio-8080-exec-1] org.springframework.web.servlet.DispatcherServlet : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@261099e1
+2021-11-04 00:18:11,691 DEBUG [http-nio-8080-exec-1] org.springframework.web.servlet.DispatcherServlet : Detected org.springframework.web.servlet.support.SessionFlashMapManager@201b52f7
+2021-11-04 00:18:11,691 DEBUG [http-nio-8080-exec-1] org.springframework.web.servlet.DispatcherServlet : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2021-11-04 00:18:11,691 INFO  [http-nio-8080-exec-1] org.springframework.web.servlet.DispatcherServlet : Completed initialization in 0 ms
+2021-11-04 00:18:11,715 DEBUG [http-nio-8080-exec-1] org.springframework.web.servlet.DispatcherServlet : GET "/my-application/user/lolwwka", parameters={}
+2021-11-04 00:18:11,723 DEBUG [http-nio-8080-exec-1] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping : Mapped to com.example.finalproject.controller.UserController#getUserInfo(String)
+2021-11-04 00:18:11,977 DEBUG [http-nio-8080-exec-1] org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2021-11-04 00:18:11,977 DEBUG [http-nio-8080-exec-1] org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor : Writing [com.example.finalproject.dto.UserProfileDto@7e9699fc]
+2021-11-04 00:18:11,993 DEBUG [http-nio-8080-exec-1] org.springframework.web.servlet.DispatcherServlet : Completed 200 OK

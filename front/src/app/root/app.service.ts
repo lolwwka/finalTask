@@ -20,7 +20,7 @@ export class AppService {
       .then((response: any) => {
         this.authenticated = true;
         this.userName = response.email;
-        // this.userId = response.id;
+        this.userId = response.id;
         return successCallback && successCallback();
       }).catch(() => {
         this.authenticated = false;

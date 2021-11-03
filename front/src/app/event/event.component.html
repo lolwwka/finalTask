@@ -1,5 +1,5 @@
 <body style="width: 1080px">
-<div style="
+<div [hidden]="!authenticated()" style="
   background-color: sandybrown;
   color: darkred;
   width: 100vw;
@@ -34,7 +34,7 @@
       <b style="
         color: #10457f;
         font-size: 2.5em;
-        text-align: center">{{event.firstTeamAmount}}</b>
+        text-align: center">{{event.firstTeamAmount}}$</b>
     </mat-grid-tile>
     <mat-grid-tile colspan="1">
       <button mat-flat-button color="primary" (click)="setBet(firstTeam.value,secondTeam.value)">Submit</button>
@@ -43,7 +43,7 @@
       <b style="
         color: #10457f;
         font-size: 2.5em;
-        text-align: center">{{event.secondTeamAmount}}</b>
+        text-align: center">{{event.secondTeamAmount}}$</b>
     </mat-grid-tile>
   </mat-grid-list>
   <mat-grid-list cols="6" rowHeight="80" [style.background]="'yellow'">
@@ -72,5 +72,13 @@
          height: 2em;
          margin-top: 1em"
        [hidden]="!exception">{{error}}</div>
+</div>
+<div [hidden]="authenticated()" style="
+         font-size: 2.5em;
+         text-align: center;
+         height: 3em;
+         margin-top: 1em;
+         color: darkred">
+  <p>Login to see bets</p>
 </div>
 </body>

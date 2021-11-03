@@ -15,3 +15,7 @@ body {
   color: blueviolet;
   font-style: normal;
 }
+
+.mat-body, .mat-body-1, .mat-typography {
+  height: 100%;
+}

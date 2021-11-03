@@ -10,6 +10,7 @@ import {AppService} from './app.service';
 import {RegisterComponent} from "../register/register.component";
 import {ConfirmRegisterComponent} from "../register/confirmRegister.component"
 import {MainComponent} from "../main/main.component";
+import {ProfileComponent} from "../profile/profile.component";
 
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule} from "@angular/material/button";
@@ -18,6 +19,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatIconModule} from "@angular/material/icon";
 import {MatListModule} from "@angular/material/list";
 import {EventComponent} from "../event/event.component";
+import {MatPaginatorModule} from "@angular/material/paginator";
 
 
 @Injectable()
@@ -38,7 +40,8 @@ const routes: Routes = [
   {path: 'register', component: RegisterComponent},
   {path: 'confirm', component: ConfirmRegisterComponent},
   {path: 'event', component: EventComponent},
-  {path: 'event/:id', component: EventComponent}
+  {path: 'event/:id', component: EventComponent},
+  {path: 'profile', component: ProfileComponent}
 ];
 
 @NgModule({
@@ -48,7 +51,8 @@ const routes: Routes = [
     RegisterComponent,
     ConfirmRegisterComponent,
     MainComponent,
-    EventComponent
+    EventComponent,
+    ProfileComponent
   ],
   imports: [
     RouterModule.forRoot(routes),
@@ -60,7 +64,8 @@ const routes: Routes = [
     MatGridListModule,
     MatInputModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
+    MatPaginatorModule
   ],
   providers: [AppService, {provide: HTTP_INTERCEPTORS, useClass: XhrInterceptor, multi: true}],
   bootstrap: [AppComponent]
