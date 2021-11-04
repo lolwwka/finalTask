@@ -1,20 +1,59 @@
 <html>
 <body>
-<div [hidden]="!authenticated()" [hidden]="!authenticated()" style="
+<div [hidden]="!authenticated()" style="
   background-color: sandybrown;
   color: darkred;
-  width: 100vw;
-  position: absolute;">>
-  <p style="font-size: 2.5em">{{userName}}</p>
-  <div *ngFor="let bet of bets">
-    <mat-list>
-      <mat-list-item>
-        <mat-grid-list cols="5">
-
-        </mat-grid-list>
-      </mat-list-item>
-    </mat-list>
-  </div>
+  width: 97vw;
+  position: absolute;">
+  <label style="font-size: 2.5em">
+    <h1 style="height: 1em; color: midnightblue">User login : {{userName}}</h1>
+  </label>
+  <label style="font-size: 3em;">
+    <p style=" height: 1em; color: midnightblue">User balance : {{balance}}</p>
+  </label>
+  <a mat-fab [routerLink]="['/balance']" style="width: auto; font-size: 2em; background-color: black; color: deeppink;">
+    <mat-icon [inline]="true" style="height: 1em">account_balance_wallet</mat-icon>
+    Balance
+  </a>
+  <br>
+  <mat-grid-list cols="8" rowHeight="5rem">
+    <mat-grid-tile style="background-color: yellow; font-size: 2.5em" colspan="2">
+      <p>First Team</p>
+    </mat-grid-tile>
+    <mat-grid-tile style="background-color: blue; font-size: 2.5em; color: honeydew" colspan="2">
+      <p>Second Team</p>
+    </mat-grid-tile>
+    <mat-grid-tile style="background-color: #040118; font-size: 2.5em; color: darksalmon" colspan="2">
+      <p>Tournament</p>
+    </mat-grid-tile>
+    <mat-grid-tile style="background-color: #e4ef4b; font-size: 2.5em" colspan="1">
+      <p>Bet</p>
+    </mat-grid-tile>
+    <mat-grid-tile style="background-color: #e4ef4b; font-size: 2.5em" colspan="1">
+      <p>Status</p>
+    </mat-grid-tile>
+    <ng-container *ngFor="let bet of (bets | slice: lowValue : highValue)">
+      <mat-grid-tile style="background-color: yellow; font-size: 2.5em" colspan="2">
+        {{bet.firstTeam}}
+      </mat-grid-tile>
+      <mat-grid-tile style="background-color: blue; font-size: 2.5em; color: honeydew" colspan="2">
+        {{bet.secondTeam}}
+      </mat-grid-tile>
+      <mat-grid-tile style="background-color: #040118; font-size: 2.5em; color: darksalmon" colspan="2">
+        {{bet.tournament}}
+      </mat-grid-tile>
+      <mat-grid-tile style="background-color: #e4ef4b; font-size: 2.5em" colspan="1">
+        {{bet.betAmount}}
+      </mat-grid-tile>
+      <mat-grid-tile style="background-color: #e4ef4b; font-size: 2.5em" colspan="1">
+        <p>{{bet.status}}</p>
+      </mat-grid-tile>
+    </ng-container>
+  </mat-grid-list>
+  <mat-paginator [length]="bets.length" pageSize=2
+                 (page)="getPaginatorData($event)" [pageSizeOptions]="[2, 4, 6]"
+                 showFirstLastButtons="false" style="background-color: yellowgreen">
+  </mat-paginator>
 </div>
 </body>
 </html>

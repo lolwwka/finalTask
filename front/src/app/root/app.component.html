@@ -1,16 +1,16 @@
 <mat-grid-list cols="3" rowHeight="60px" *ngIf="authenticated()" [style.background]="'red'">
   <mat-grid-tile colspan="1">
-    <a mat-fab [routerLink]="['/home']">
+    <a mat-fab [routerLink]="['/home']" style="width: auto">
       <mat-icon>home</mat-icon>
       BetPage</a>
   </mat-grid-tile>
   <mat-grid-tile colspan="1">
-    <a mat-fab [routerLink]="['/profile']">
-      <mat-icon>face</mat-icon>
+    <a mat-fab [routerLink]="['/profile']" style="width: auto">
+      <mat-icon>account_circle</mat-icon>
       Profile</a>
   </mat-grid-tile>
   <mat-grid-tile colspan="1">
-    <button mat-fab (click)="logout()">
+    <button mat-fab (click)="logout()" style="width: auto">
       <mat-icon>exit_to_app</mat-icon>
       Logout
     </button>

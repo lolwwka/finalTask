@@ -1,6 +1,6 @@
 package com.example.finalproject.service.bet;
 
-import com.example.finalproject.dto.BetDto;
+import com.example.finalproject.dto.BetTeamDto;
 import com.example.finalproject.entity.Bet;
 import com.example.finalproject.entity.Event;
 import com.example.finalproject.entity.User;
@@ -22,22 +22,28 @@ public class BetServiceImpl implements BetService {
     }
 
     @Override
-    public BetDto addBet(String userEmail, long betValue, String teamName, long eventId) {
-        if (betRepository.countByUserId(userRepository.findByEmail(userEmail).getId()) > 3) {
-            return new BetDto(true);
+    public BetTeamDto addBet(String userEmail, long betValue, String teamName, long eventId) {
+        User user = userRepository.findByEmail(userEmail);
+        if(user.getBalance() < betValue){
+            throw new RuntimeException("No such money on account");
         }
+        /*long betsOnThisEvent = betRepository.countByUserIdAndEventId(userRepository.findByEmail(userEmail).getId(), eventId);
+        if (betsOnThisEvent > 3) {
+            return new BetTeamDto(true);
+
+        }*/  // ?????? Как сделать перебор по ставке на событии
         Event event = eventRepository.getById(eventId);
         if (event.getTeams().get(0).getName().equals(teamName))
             event.setFirstTeamAmount(event.getFirstTeamAmount() + betValue);
         else event.setSecondTeamAmount(event.getSecondTeamAmount() + betValue);
-        User user = userRepository.findByEmail(userEmail);
         Bet bet = new Bet(betValue);
         bet.setUser(user);
+        bet.setEvent(eventRepository.getById(eventId));
         betRepository.save(bet);
-        BetDto betDto = new BetDto();
-        betDto.setFirstTeamAmount(event.getFirstTeamAmount());
-        betDto.setSecondTeamAmount(event.getSecondTeamAmount());
-        betDto.setException(false);
-        return betDto;
+        BetTeamDto betTeamDto = new BetTeamDto();
+        betTeamDto.setFirstTeamAmount(event.getFirstTeamAmount());
+        betTeamDto.setSecondTeamAmount(event.getSecondTeamAmount());
+        betTeamDto.setException(false);
+        return betTeamDto;
     }
 }

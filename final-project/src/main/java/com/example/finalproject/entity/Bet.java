@@ -10,15 +10,36 @@ public class Bet {
     @Column(name = "id")
     private long id;
     private long amount;
+    private String status;
+
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;
 
+    @ManyToOne
+    @JoinColumn(name = "event_id")
+    private Event event;
     public Bet() {
     }
 
     public Bet(long amount) {
         this.amount = amount;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public Event getEvent() {
+        return event;
+    }
+
+    public void setEvent(Event event) {
+        this.event = event;
     }
 
     public long getAmount() {

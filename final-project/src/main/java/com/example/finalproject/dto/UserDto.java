@@ -14,15 +14,15 @@ public class UserDto {
     @NotBlank
     @Size(min = 5, max = 25)
     private String password;
-//    private long id;
-//
-//    public long getId() {
-//        return id;
-//    }
+    private long id;
 
-//    public void setId(long id) {
-//        this.id = id;
-//    }
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
 
     public String getEmail() {
         return email;

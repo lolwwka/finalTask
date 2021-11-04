@@ -18,12 +18,23 @@ public class Event {
     private long secondTeamAmount;
     private String tournamentName;
 
+    @OneToMany(mappedBy = "event")
+    private List<Bet> bets;
+
     @ManyToMany(fetch = FetchType.EAGER)
     @Size(min = 2, max = 2)
     @JoinTable(name = "team_event",
             joinColumns = @JoinColumn(name = "event_id"),
             inverseJoinColumns = @JoinColumn(name = "team_id"))
     private List<Team> teams;
+
+    public List<Bet> getBets() {
+        return bets;
+    }
+
+    public void setBets(List<Bet> bets) {
+        this.bets = bets;
+    }
 
     public long getFirstTeamAmount() {
         return firstTeamAmount;

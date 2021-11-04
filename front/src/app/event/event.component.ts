@@ -65,10 +65,18 @@ export class EventComponent {
         }
         this.event.firstTeamAmount = data.firstTeamAmount;
         this.event.secondTeamAmount = data.secondTeamAmount;
-        this.setIndexes();
+        if(this.setIndexes() == false){
+          this.error = 'To many bets for this team';
+          this.exception = true;
+        }
       })
       .catch((e) => {
-        this.error = e;
+        this.error = e.status;
+        if(this.error == '500'){
+          this.error = 'Incorrect num of money'
+        }
+        this.exception = true;
+        return;
       });
     this.exception = false;
   }
@@ -77,7 +85,7 @@ export class EventComponent {
     return this.app.authenticated;
   }
 
-  setIndexes() {
+  setIndexes() : boolean{
     let totalBets = this.event.firstTeamAmount + this.event.secondTeamAmount;
     let usersAmount = totalBets - this.profit * totalBets;
     if (this.event.firstTeamAmount == 0) {
@@ -89,9 +97,15 @@ export class EventComponent {
     if (this.event.firstTeamAmount == 0 && this.event.secondTeamAmount == 0) {
       this.firstIndex = 0;
       this.secondIndex = 0;
-      return;
+      return true;
     }
-    this.firstIndex = new Intl.NumberFormat('en-US', {maximumSignificantDigits: 3}).format(usersAmount / this.event.firstTeamAmount);
-    this.secondIndex = new Intl.NumberFormat('en-US', {maximumSignificantDigits: 3}).format(usersAmount / this.event.secondTeamAmount);
+    let firstCalcIndex = new Intl.NumberFormat('en-US', {maximumSignificantDigits: 3}).format(usersAmount / this.event.firstTeamAmount);
+    let secondCalcIndex =  new Intl.NumberFormat('en-US', {maximumSignificantDigits: 3}).format(usersAmount / this.event.secondTeamAmount);
+    if(Number(firstCalcIndex) < 0 || Number(secondCalcIndex) < 0){
+      return false;
+    }
+    this.firstIndex = firstCalcIndex;
+    this.secondIndex = secondCalcIndex;
+    return true;
   }
 }

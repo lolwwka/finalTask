@@ -1,6 +1,6 @@
 package com.example.finalproject.controller;
 
-import com.example.finalproject.dto.BetDto;
+import com.example.finalproject.dto.BetTeamDto;
 import com.example.finalproject.dto.GotBetDto;
 import com.example.finalproject.service.bet.BetService;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -18,7 +18,7 @@ public class BetController {
     }
 
     @PostMapping
-    public BetDto addBet(@RequestBody GotBetDto betDto) {
+    public BetTeamDto addBet(@RequestBody GotBetDto betDto) {
         return betService.addBet(betDto.getUserMail(), betDto.getBetValue(), betDto.getTeamName(), betDto.getEventId());
     }
 }

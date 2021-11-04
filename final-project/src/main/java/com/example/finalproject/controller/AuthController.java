@@ -13,19 +13,19 @@ import java.security.Principal;
 @RestController
 @RequestMapping("/authentication")
 public class AuthController {
-//    private final UserService userService;
+    private final UserService userService;
     private static final Logger LOGGER = LoggerFactory.getLogger(AuthController.class);
 
-//    public AuthController(UserService userService) {
-//        this.userService = userService;
-//    }
+    public AuthController(UserService userService) {
+        this.userService = userService;
+    }
 
     @PostMapping
     public UserDto authenticate(Principal principal) {
         LOGGER.debug("User {} logged in", principal.getName());
         UserDto user = new UserDto();
         user.setEmail(principal.getName());
-//        user.setId(userService.getUserByEmail(principal.getName()).getId());
+        user.setId(userService.getUserByEmail(principal.getName()).getId());
         return user;
     }
 }

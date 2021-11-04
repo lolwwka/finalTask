@@ -11,6 +11,7 @@ import {RegisterComponent} from "../register/register.component";
 import {ConfirmRegisterComponent} from "../register/confirmRegister.component"
 import {MainComponent} from "../main/main.component";
 import {ProfileComponent} from "../profile/profile.component";
+import {BalanceComponent} from "../balance/balance.component";
 
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule} from "@angular/material/button";
@@ -41,7 +42,8 @@ const routes: Routes = [
   {path: 'confirm', component: ConfirmRegisterComponent},
   {path: 'event', component: EventComponent},
   {path: 'event/:id', component: EventComponent},
-  {path: 'profile', component: ProfileComponent}
+  {path: 'profile', component: ProfileComponent},
+  {path: 'balance', component: BalanceComponent}
 ];
 
 @NgModule({
@@ -52,7 +54,8 @@ const routes: Routes = [
     ConfirmRegisterComponent,
     MainComponent,
     EventComponent,
-    ProfileComponent
+    ProfileComponent,
+    BalanceComponent
   ],
   imports: [
     RouterModule.forRoot(routes),
