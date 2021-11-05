@@ -5,7 +5,7 @@ spring:
     driver-class-name: org.postgresql.Driver
     username: postgres
     password: jmgapja.
-    url: jdbc:postgresql://localhost:5432/postgres
+    url: dbc:postgresql://localhost:5432/postgres
     hikari:
       minimum-idle: 10
       maximum-pool-size: 20

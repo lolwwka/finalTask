@@ -4,6 +4,8 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "bet")
+@NamedQuery(name = "int.countByEventAndVisitor", query = "SELECT count (b) from Bet b where " +
+        "b.event = :event and b.user = :user")
 public class Bet {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

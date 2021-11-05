@@ -12,6 +12,7 @@ import {ConfirmRegisterComponent} from "../register/confirmRegister.component"
 import {MainComponent} from "../main/main.component";
 import {ProfileComponent} from "../profile/profile.component";
 import {BalanceComponent} from "../balance/balance.component";
+import {AdminPageComponent} from "../admin/admin-page.component";
 
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule} from "@angular/material/button";
@@ -21,6 +22,7 @@ import {MatIconModule} from "@angular/material/icon";
 import {MatListModule} from "@angular/material/list";
 import {EventComponent} from "../event/event.component";
 import {MatPaginatorModule} from "@angular/material/paginator";
+import {MatOptionModule} from "@angular/material/core";
 
 
 @Injectable()
@@ -43,7 +45,8 @@ const routes: Routes = [
   {path: 'event', component: EventComponent},
   {path: 'event/:id', component: EventComponent},
   {path: 'profile', component: ProfileComponent},
-  {path: 'balance', component: BalanceComponent}
+  {path: 'balance', component: BalanceComponent},
+  {path: 'admin', component: AdminPageComponent}
 ];
 
 @NgModule({
@@ -55,21 +58,23 @@ const routes: Routes = [
     MainComponent,
     EventComponent,
     ProfileComponent,
-    BalanceComponent
+    BalanceComponent,
+    AdminPageComponent
   ],
-  imports: [
-    RouterModule.forRoot(routes),
-    BrowserModule,
-    HttpClientModule,
-    FormsModule,
-    BrowserAnimationsModule,
-    MatButtonModule,
-    MatGridListModule,
-    MatInputModule,
-    MatIconModule,
-    MatListModule,
-    MatPaginatorModule
-  ],
+    imports: [
+        RouterModule.forRoot(routes),
+        BrowserModule,
+        HttpClientModule,
+        FormsModule,
+        BrowserAnimationsModule,
+        MatButtonModule,
+        MatGridListModule,
+        MatInputModule,
+        MatIconModule,
+        MatListModule,
+        MatPaginatorModule,
+        MatOptionModule
+    ],
   providers: [AppService, {provide: HTTP_INTERCEPTORS, useClass: XhrInterceptor, multi: true}],
   bootstrap: [AppComponent]
 })

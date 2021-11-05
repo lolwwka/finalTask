@@ -14,14 +14,15 @@ export class ProfileComponent {
   balance : number = 0;
   bets : Array<any> = [];
   lowValue: number = 0;
-  highValue: number = 20;
+  highValue: number = 4;
 
   constructor(private app: AppService, private appComponent: AppComponent,private router: Router, private http: HttpClient) {
-    this.userName = appComponent.getUserName();
-    http.get(environment.apiUrl + "/user/" + appComponent.getUserName())
+    this.userName = appComponent.getUserLogin();
+    http.get(environment.apiUrl + "/user/" + appComponent.getUserLogin())
       .toPromise()
       .then((data : any) => {
         this.balance = data.balance;
+        this.app.balance = this.balance;
         this.bets = <Array<any>>data.bets;
       })
   }

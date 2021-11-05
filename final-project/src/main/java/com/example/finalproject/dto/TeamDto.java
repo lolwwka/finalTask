@@ -21,4 +21,8 @@ public class TeamDto {
 
     public TeamDto() {
     }
+
+    public TeamDto(String name) {
+        this.name = name;
+    }
 }

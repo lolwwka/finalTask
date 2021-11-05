@@ -17,6 +17,7 @@ import javax.mail.MessagingException;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -72,6 +73,16 @@ public class UserServiceImpl implements UserService {
         return new UserProfileDto(user.getBalance(),betTeam);
     }
 
+    @Override
+    public Set<String> convertUserRoles(Set<Role> roles) {
+        List<Role> result= new ArrayList<>(roles);
+        Set<String> resultSet = new HashSet<>();
+        for(Role role : result){
+            resultSet.add("ROLE_" + role.getName());
+        }
+        return resultSet;
+    }
+
     public boolean sendCodeEmail(User user) {
         try {
             return emailService.sendCodeEmail(user.getEmail(), user.getKeyCode());
@@ -92,4 +103,5 @@ public class UserServiceImpl implements UserService {
         user.setKeyCode(registerService.generateUserCode(user.getEmail()));
         return user;
     }
+
 }

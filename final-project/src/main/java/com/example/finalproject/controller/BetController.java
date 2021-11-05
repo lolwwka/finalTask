@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/bet")
+@RequestMapping("/event/{id}/bet")
 public class BetController {
     private final BetService betService;
 

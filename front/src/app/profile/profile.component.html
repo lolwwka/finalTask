@@ -50,7 +50,7 @@
       </mat-grid-tile>
     </ng-container>
   </mat-grid-list>
-  <mat-paginator [length]="bets.length" pageSize=2
+  <mat-paginator [length]="bets.length"
                  (page)="getPaginatorData($event)" [pageSizeOptions]="[2, 4, 6]"
                  showFirstLastButtons="false" style="background-color: yellowgreen">
   </mat-paginator>

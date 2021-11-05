@@ -65,7 +65,7 @@ export class EventComponent {
         }
         this.event.firstTeamAmount = data.firstTeamAmount;
         this.event.secondTeamAmount = data.secondTeamAmount;
-        if(this.setIndexes() == false){
+        if(!this.setIndexes()){
           this.error = 'To many bets for this team';
           this.exception = true;
         }

@@ -24,6 +24,7 @@ public class BetServiceImpl implements BetService {
     @Override
     public BetTeamDto addBet(String userEmail, long betValue, String teamName, long eventId) {
         User user = userRepository.findByEmail(userEmail);
+        user.setBalance(user.getBalance()- betValue);
         if(user.getBalance() < betValue){
             throw new RuntimeException("No such money on account");
         }
@@ -39,6 +40,7 @@ public class BetServiceImpl implements BetService {
         Bet bet = new Bet(betValue);
         bet.setUser(user);
         bet.setEvent(eventRepository.getById(eventId));
+        bet.setStatus("In process");
         betRepository.save(bet);
         BetTeamDto betTeamDto = new BetTeamDto();
         betTeamDto.setFirstTeamAmount(event.getFirstTeamAmount());

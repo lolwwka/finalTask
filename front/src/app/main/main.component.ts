@@ -14,7 +14,7 @@ export class MainComponent {
   highValue: number = 20;
 
   constructor(private app: AppService, private appComponent: AppComponent) {
-    this.username = appComponent.getUserName();
+    this.username = appComponent.getUserLogin();
     app.getEvents((data: any) => this.events = <Array<any>>data,
       (error: any) => this.error = error.message);
   }

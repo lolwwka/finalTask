@@ -22,8 +22,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     @Bean
     public PasswordEncoder passwordEncoder() {
-        PasswordEncoder encoder = new BCryptPasswordEncoder();
-        return encoder;
+        return new BCryptPasswordEncoder();
     }
 
     @Override
@@ -31,7 +30,10 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         http
                 .csrf().disable()
                 .authorizeRequests()
-                .antMatchers("/register", "/register/**", "/team", "/event", "/event/**", "/bet", "/user",
+                .antMatchers("/register",
+                        "/register/**",
+                        "/team",
+                        "/event", "/event/**", "/bet", "/user",
                         "/user/**", "/balance").permitAll()
                 .anyRequest().authenticated()
                 .and().httpBasic();

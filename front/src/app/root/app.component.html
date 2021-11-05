@@ -1,19 +1,25 @@
 <mat-grid-list cols="3" rowHeight="60px" *ngIf="authenticated()" [style.background]="'red'">
   <mat-grid-tile colspan="1">
-    <a mat-fab [routerLink]="['/home']" style="width: auto">
+    <a mat-fab [routerLink]="['/home']" style="width: auto; background-color:wheat">
       <mat-icon>home</mat-icon>
       BetPage</a>
   </mat-grid-tile>
   <mat-grid-tile colspan="1">
-    <a mat-fab [routerLink]="['/profile']" style="width: auto">
+    <a mat-fab [routerLink]="['/profile']" style="width: auto; background-color:wheat">
       <mat-icon>account_circle</mat-icon>
       Profile</a>
   </mat-grid-tile>
   <mat-grid-tile colspan="1">
-    <button mat-fab (click)="logout()" style="width: auto">
+    <button mat-fab (click)="logout()" style="width: auto; background-color:wheat">
       <mat-icon>exit_to_app</mat-icon>
       Logout
     </button>
+  </mat-grid-tile>
+  <mat-grid-tile *ngIf="admin()" colspan="3">
+    <a mat-fab [routerLink]="['/admin']" style="width: auto; background-color: wheat">
+      <mat-icon>supervisor_account</mat-icon>
+      Admin
+    </a>
   </mat-grid-tile>
 </mat-grid-list>
 

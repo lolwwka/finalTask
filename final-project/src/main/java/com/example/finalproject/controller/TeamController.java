@@ -2,13 +2,11 @@ package com.example.finalproject.controller;
 
 import com.example.finalproject.dto.TeamDto;
 import com.example.finalproject.service.team.TeamService;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @RestController
@@ -27,5 +25,9 @@ public class TeamController {
         HashMap<String, String> result = new HashMap<>();
         result.put("confirmed", "true");
         return result;
+    }
+    @GetMapping
+    public List<TeamDto> getAllTeams(){
+        return teamService.getTeams();
     }
 }

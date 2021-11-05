@@ -1,0 +1,36 @@
+<html>
+<body>
+<div>
+  <mat-grid-list cols="2" rowHeight="60px" style="background-color: darksalmon">
+    <div style="color: black; background-color: wheat; font-size: 2em">
+      <mat-grid-tile colspan="2">
+        <p>Add team</p>
+      </mat-grid-tile>
+      <mat-grid-tile colspan="1">
+        <mat-form-field appearance="fill">
+          <mat-label>First Team</mat-label>
+          <select matNativeControl required>
+            <option *ngFor="let team of teams" [value]="team.name">
+              {{team.name}}
+            </option>
+          </select>
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile colspan="1">
+        <mat-form-field appearance="fill">
+          <mat-label>Second Team</mat-label>
+          <select matNativeControl required>
+            <option *ngFor="let team of teams" [value]="team.name">
+              {{team.name}}
+            </option>
+          </select>
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <button mat-flat-button color="accent">Submit</button>
+      </mat-grid-tile>
+    </div>
+  </mat-grid-list>
+</div>
+</body>
+</html>

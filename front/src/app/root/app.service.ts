@@ -7,6 +7,8 @@ export class AppService {
   authenticated = false;
   userName = "";
   userId = 0;
+  roles : Array<any> = [];
+  balance : any;
 
   constructor(private http: HttpClient) {
   }
@@ -21,6 +23,7 @@ export class AppService {
         this.authenticated = true;
         this.userName = response.email;
         this.userId = response.id;
+        this.roles = <Array<any>>response.roles;
         return successCallback && successCallback();
       }).catch(() => {
         this.authenticated = false;

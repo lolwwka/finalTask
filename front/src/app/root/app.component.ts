@@ -34,8 +34,12 @@ export class AppComponent {
   authenticated() {
     return this.app.authenticated;
   }
+  admin(){
+    return (this.app.roles.indexOf('ROLE_ADMIN') != -1);
 
-  getUserName() {
+  }
+
+  getUserLogin() {
     let username = this.app.userName;
     let modifiedUsername = username.split("@", 1);
     return modifiedUsername[0];

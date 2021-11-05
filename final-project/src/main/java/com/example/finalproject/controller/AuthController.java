@@ -1,6 +1,7 @@
 package com.example.finalproject.controller;
 
 import com.example.finalproject.dto.UserDto;
+import com.example.finalproject.entity.User;
 import com.example.finalproject.service.user.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -23,9 +24,11 @@ public class AuthController {
     @PostMapping
     public UserDto authenticate(Principal principal) {
         LOGGER.debug("User {} logged in", principal.getName());
-        UserDto user = new UserDto();
-        user.setEmail(principal.getName());
-        user.setId(userService.getUserByEmail(principal.getName()).getId());
-        return user;
+        UserDto userDto = new UserDto();
+        User user = userService.getUserByEmail(principal.getName());
+        userDto.setEmail(principal.getName());
+        userDto.setRoles(userService.convertUserRoles(user.getRoles()));
+        userDto.setId(user.getId());
+        return userDto;
     }
 }

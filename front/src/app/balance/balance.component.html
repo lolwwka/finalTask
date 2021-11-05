@@ -1,13 +1,17 @@
 <html>
 <body style="width: 100vh">
-<div [hidden]="!authenticated()">
-  <h1>Today you have good time to have so easy money for free, just click button below</h1>
-  <div class="container2">
-    <div class="vertical-center">
-      <button mat-fab (click)="getFreeMoney()">
+<div [hidden]="!authenticated()" style="
+  background-color: sandybrown;
+  color: darkred;
+  width: 97vw;
+  position: absolute;">
+  <h1>Today you have good time to have so easy money for free, just click the button below</h1>
+  <h1>You're balance now : {{userBalance}}</h1>
+  <h1> CLICK MORE !!! </h1>
+  <div style="width: 100%; font-size: 3.5em; color: darkred">
+      <button style="background-color:wheat; width: auto" mat-fab (click)="getFreeMoney()">
         <mat-icon>touch_app</mat-icon>
         GET!!!</button>
-    </div>
   </div>
 </div>
 <div [hidden]="authenticated()">
