@@ -15,10 +15,14 @@ export class ProfileComponent {
   bets : Array<any> = [];
   lowValue: number = 0;
   highValue: number = 4;
+  currentLimit : any;
+  currentOffset : any;
 
   constructor(private app: AppService, private appComponent: AppComponent,private router: Router, private http: HttpClient) {
     this.userName = appComponent.getUserLogin();
-    http.get(environment.apiUrl + "/user/" + appComponent.getUserLogin())
+    http.get(environment.apiUrl + "/user/" + appComponent.getUserLogin(),{
+      withCredentials: true
+    })
       .toPromise()
       .then((data : any) => {
         this.balance = data.balance;
@@ -32,6 +36,17 @@ export class ProfileComponent {
   public getPaginatorData(event: PageEvent): PageEvent {
     this.lowValue = event.pageIndex * event.pageSize;
     this.highValue = this.lowValue + event.pageSize;
+   /* this.currentLimit = event.pageIndex * event.pageSize;
+    this.currentOffset = this.lowValue + event.pageSize;*/
     return event;
   }
+  /*private getBetsData(limit : number, offset : number){
+    this.http.get(environment.apiUrl + '/user/' + this.appComponent.getUserLogin() + '/?' + offset +'&' + limit,{
+      withCredentials: true
+    })
+      .toPromise()
+      .then((data : any) =>{
+        this.bets = <Array<any>>data.bets;
+      })
+  }*/
 }

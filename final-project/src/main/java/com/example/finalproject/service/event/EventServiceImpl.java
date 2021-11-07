@@ -39,6 +39,7 @@ public class EventServiceImpl implements EventService {
     @Override
     public boolean addEvent(String firstTeamName, String secondTeamName, String tournamentName) {
         Event event = new Event();
+        //Добавить проверку на уже созданный event
         ArrayList<Team> teams = new ArrayList<>();
         teams.add(teamService.getTeam(firstTeamName));
         teams.add(teamService.getTeam(secondTeamName));

@@ -18,6 +18,9 @@ public class TeamServiceImpl implements TeamService {
 
     @Override
     public boolean addTeam(String name) {
+        if(teamRepository.findByName(name) != null){
+            throw new RuntimeException("Team is already created");
+        }
         teamRepository.save(new Team(name));
         return true;
     }
@@ -34,7 +37,7 @@ public class TeamServiceImpl implements TeamService {
 
     @Override
     public Team getTeam(String name) {
-        return teamRepository.getTeamByName(name);
+        return teamRepository.findByName(name);
     }
 
     @Override

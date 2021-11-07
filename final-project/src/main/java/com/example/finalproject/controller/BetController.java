@@ -8,8 +8,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.security.Principal;
+
 @RestController
-@RequestMapping("/event/{id}/bet")
+@RequestMapping("/bet")
 public class BetController {
     private final BetService betService;
 
@@ -18,7 +20,7 @@ public class BetController {
     }
 
     @PostMapping
-    public BetTeamDto addBet(@RequestBody GotBetDto betDto) {
-        return betService.addBet(betDto.getUserMail(), betDto.getBetValue(), betDto.getTeamName(), betDto.getEventId());
+    public BetTeamDto addBet(@RequestBody GotBetDto betDto, Principal principal) {
+        return betService.addBet(principal.getName(), betDto.getBetValue(), betDto.getTeamName(), betDto.getEventId());
     }
 }

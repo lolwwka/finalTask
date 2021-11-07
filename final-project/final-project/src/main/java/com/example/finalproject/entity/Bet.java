@@ -11,7 +11,7 @@ public class Bet {
     private long id;
     private long amount;
     @ManyToOne
-    @JoinColumn(name = "user_id")
+    @JoinColumn(name = "visitor_id")
     private User user;
     @ManyToOne
     @JoinColumn(name = "event_id")

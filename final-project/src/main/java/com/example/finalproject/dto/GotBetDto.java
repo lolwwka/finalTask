@@ -1,9 +1,7 @@
 package com.example.finalproject.dto;
 
 
-
 public class GotBetDto {
-    private String userMail;
     private long betValue;
     private long eventId;
     private String teamName;
@@ -33,14 +31,6 @@ public class GotBetDto {
     }
 
     private String betTeam;
-
-    public String getUserMail() {
-        return userMail;
-    }
-
-    public void setUserMail(String userMail) {
-        this.userMail = userMail;
-    }
 
     public long getBetValue() {
         return betValue;

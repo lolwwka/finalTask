@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.security.Principal;
+
 @RestController
 @RequestMapping("/balance")
 public class BalanceController {
@@ -17,7 +19,7 @@ public class BalanceController {
     }
 
     @PostMapping
-    public Result getFreeMoney(@RequestHeader String login){
-        return new Result(balanceService.addFreeMoney(login));
+    public Result getFreeMoney(Principal principal){
+        return new Result(balanceService.addFreeMoney(principal.getName()));
     }
 }

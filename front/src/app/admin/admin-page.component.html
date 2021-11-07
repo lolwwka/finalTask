@@ -1,35 +1,61 @@
 <html>
 <body>
 <div>
-  <mat-grid-list cols="2" rowHeight="60px" style="background-color: darksalmon">
-    <div style="color: black; background-color: wheat; font-size: 2em">
-      <mat-grid-tile colspan="2">
-        <p>Add team</p>
+  <mat-grid-list cols="3" rowHeight="100px" style="background-color: darksalmon">
+    <div style="color: black; background-color: wheat; font-size: 1em">
+      <mat-grid-tile colspan="3">
+        <p style="font-size: 2em; color: deeppink; font-family: Snell Roundhand, cursive">Add event</p>
       </mat-grid-tile>
       <mat-grid-tile colspan="1">
         <mat-form-field appearance="fill">
           <mat-label>First Team</mat-label>
-          <select matNativeControl required>
+          <select matNativeControl required [(ngModel)]="firstTeamName">
             <option *ngFor="let team of teams" [value]="team.name">
               {{team.name}}
             </option>
           </select>
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile colspan="1">
+        <mat-form-field appearance="outline">
+          <mat-label>Tournament name</mat-label>
+          <input #tournamentName matInput placeholder="Major">
         </mat-form-field>
       </mat-grid-tile>
       <mat-grid-tile colspan="1">
         <mat-form-field appearance="fill">
           <mat-label>Second Team</mat-label>
-          <select matNativeControl required>
+          <select matNativeControl required [(ngModel)]="secondTeamName">
             <option *ngFor="let team of teams" [value]="team.name">
               {{team.name}}
             </option>
           </select>
         </mat-form-field>
       </mat-grid-tile>
-      <mat-grid-tile>
-        <button mat-flat-button color="accent">Submit</button>
+      <mat-grid-tile colspan="3">
+        <button mat-flat-button color="accent" (click)="createEvent(tournamentName.value)">Submit</button>
       </mat-grid-tile>
     </div>
+    <div [hidden]="getEventException()" style="
+         font-size: 2.5em;
+         text-align: center;
+         height: 3em;
+         margin-top: 1em;
+         color: darkred">
+      <p>Problems with adding bet</p>
+    </div>
+    <mat-grid-tile colspan="3">
+      <p style="font-size: 2em; color: deeppink; font-family: Snell Roundhand, cursive">Add team</p>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="3">
+      <mat-form-field appearance="outline">
+        <mat-label>Team name</mat-label>
+        <input #addingTeamName matInput placeholder="NAVI">
+      </mat-form-field>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="3">
+      <button mat-flat-button color="accent" (click)="createTeam(addingTeamName.value)">Submit</button>
+    </mat-grid-tile>
   </mat-grid-list>
 </div>
 </body>

@@ -28,11 +28,10 @@ public class BetServiceImpl implements BetService {
         if(user.getBalance() < betValue){
             throw new RuntimeException("No such money on account");
         }
-        /*long betsOnThisEvent = betRepository.countByUserIdAndEventId(userRepository.findByEmail(userEmail).getId(), eventId);
-        if (betsOnThisEvent > 3) {
+        long betsOnThisEvent = betRepository.countByUserBetNum(eventId ,userRepository.findByEmail(userEmail).getId());
+        if (betsOnThisEvent > 2) {
             return new BetTeamDto(true);
-
-        }*/  // ?????? Как сделать перебор по ставке на событии
+        }  // ?????? Как сделать перебор по ставке на событии
         Event event = eventRepository.getById(eventId);
         if (event.getTeams().get(0).getName().equals(teamName))
             event.setFirstTeamAmount(event.getFirstTeamAmount() + betValue);

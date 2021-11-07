@@ -1,6 +1,6 @@
 import {Component} from "@angular/core";
 import {AppService} from "../root/app.service";
-import {HttpClient, HttpHeaders} from "@angular/common/http";
+import {HttpClient} from "@angular/common/http";
 import {environment} from "../../environments/environment";
 
 @Component({
@@ -15,8 +15,9 @@ export class BalanceComponent{
     return this.app.authenticated;
   }
   getFreeMoney(){
-    const headers = new HttpHeaders({'Login': this.app.userName});
-    this.http.post(environment.apiUrl + '/balance', {}, {headers : headers, withCredentials:true})
+    this.http.post(environment.apiUrl + '/balance', {},{
+      withCredentials: true
+    })
       .toPromise();
     this.userBalance +=100;
   }

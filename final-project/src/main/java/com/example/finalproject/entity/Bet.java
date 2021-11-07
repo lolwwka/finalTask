@@ -4,8 +4,6 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "bet")
-@NamedQuery(name = "int.countByEventAndVisitor", query = "SELECT count (b) from Bet b where " +
-        "b.event = :event and b.user = :user")
 public class Bet {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -15,7 +13,7 @@ public class Bet {
     private String status;
 
     @ManyToOne
-    @JoinColumn(name = "user_id")
+    @JoinColumn(name = "visitor_id")
     private User user;
 
     @ManyToOne

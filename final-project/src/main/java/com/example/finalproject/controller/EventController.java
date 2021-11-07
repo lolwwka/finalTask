@@ -1,5 +1,6 @@
 package com.example.finalproject.controller;
 
+import com.example.finalproject.dto.Result;
 import com.example.finalproject.dto.event.EventDto;
 import com.example.finalproject.dto.event.EventDtoWithBets;
 import com.example.finalproject.dto.event.EventWithTeams;
@@ -21,14 +22,11 @@ public class EventController {
     }
 
     @PostMapping
-    public Map<String, String> addEvent(@Valid @RequestBody EventDto eventDto) {
+    public Result addEvent(@Valid @RequestBody EventDto eventDto) {
         String tournamentName = eventDto.getTournamentName();
         String firstTeamName = eventDto.getFirstTeamName();
         String secondTeamName = eventDto.getSecondTeamName();
-        eventService.addEvent(firstTeamName, secondTeamName, tournamentName);
-        Map<String, String> result = new HashMap<>();
-        result.put("confirmed", "true");
-        return result;
+        return new Result(eventService.addEvent(firstTeamName, secondTeamName, tournamentName));
     }
 
     @GetMapping

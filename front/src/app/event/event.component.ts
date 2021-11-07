@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {AppService} from '../root/app.service';
 import {ActivatedRoute, Router} from '@angular/router';
-import {HttpClient} from "@angular/common/http";
+import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {environment} from "../../environments/environment";
 
 
@@ -55,6 +55,8 @@ export class EventComponent {
       betValue: betValue,
       eventId: this.eventId,
       userMail: this.app.userName
+    }, {
+      withCredentials: true
     })
       .toPromise()
       .then((data: any) => {

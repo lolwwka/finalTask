@@ -33,7 +33,9 @@ export class AppService {
   }
 
   getEvents(successCallback: any, failureCallback: any) {
-    this.http.get(environment.apiUrl + '/event', {})
+    this.http.get(environment.apiUrl + '/event', {
+      withCredentials: true
+    })
       .toPromise()
       .then((data: any) => {
         return successCallback && successCallback(data)
@@ -43,7 +45,9 @@ export class AppService {
   }
 
   getEvent(id: any, successCallback: any, failureCallback: any) {
-    this.http.get(environment.apiUrl + '/event/' + id, {})
+    this.http.get(environment.apiUrl + '/event/' + id, {
+      withCredentials: true
+    })
       .toPromise()
       .then((data: any) => {
         return successCallback && successCallback(data)

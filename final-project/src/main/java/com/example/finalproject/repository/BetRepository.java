@@ -2,7 +2,13 @@ package com.example.finalproject.repository;
 
 import com.example.finalproject.entity.Bet;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
+
+import javax.persistence.NamedQuery;
 
 public interface BetRepository extends JpaRepository<Bet, Long> {
-    int countByEventAndVisitor(long event, long user);
+    @Query(value = "SELECT count (b.status) from Bet b where " +
+            "b.event.id = :eventId and b.user.id = :userId")
+    int countByUserBetNum(@Param("eventId") long eventId, @Param("userId") long userId);
 }
