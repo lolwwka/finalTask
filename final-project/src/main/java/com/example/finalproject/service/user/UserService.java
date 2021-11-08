@@ -14,7 +14,10 @@ public interface UserService {
     List<User> getUsers();
 
     boolean addUser(UserDto userDto);
+
     User getUserByEmail(String email);
+
     UserProfileDto getUserInfo(String login);
+
     Set<String> convertUserRoles(Set<Role> roles);
 }

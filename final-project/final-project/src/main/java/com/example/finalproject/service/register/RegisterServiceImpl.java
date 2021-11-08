@@ -1,7 +1,7 @@
 package com.example.finalproject.service.register;
 
 import com.example.finalproject.entity.User;
-import com.example.finalproject.repository.UserRepository;
+import com.example.finalproject.repository.VisitorRepository;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 

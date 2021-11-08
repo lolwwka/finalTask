@@ -6,6 +6,8 @@ public class EventWithTeams {
     private String firstTeamName;
     private String secondTeamName;
     private String tournamentName;
+    private String status;
+    private String winningTeam;
 
     public long getId() {
         return id;
@@ -39,4 +41,19 @@ public class EventWithTeams {
         this.tournamentName = tournamentName;
     }
 
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public String getWinningTeam() {
+        return winningTeam;
+    }
+
+    public void setWinningTeam(String winningTeam) {
+        this.winningTeam = winningTeam;
+    }
 }

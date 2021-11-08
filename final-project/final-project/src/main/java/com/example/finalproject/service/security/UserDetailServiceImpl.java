@@ -2,7 +2,7 @@ package com.example.finalproject.service.security;
 
 import com.example.finalproject.entity.Role;
 import com.example.finalproject.entity.User;
-import com.example.finalproject.repository.UserRepository;
+import com.example.finalproject.repository.VisitorRepository;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;

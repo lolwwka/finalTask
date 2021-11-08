@@ -10,7 +10,9 @@ import java.util.List;
 public interface EventService {
     boolean addEvent(String firstTeam, String secondTeam, String tournamentName);
 
-    List<EventWithTeams> getAllEvents();
+    List<EventWithTeams> getAllEvents(String login);
+
+    boolean changeEventStatus(long eventId, String newStatus, String winningTeam);
 
     EventDtoWithBets getEvent(long id);
 }

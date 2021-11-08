@@ -4,8 +4,6 @@ import com.example.finalproject.dto.Result;
 import com.example.finalproject.dto.UserDto;
 import com.example.finalproject.service.register.RegisterService;
 import com.example.finalproject.service.user.UserService;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -13,7 +11,6 @@ import javax.validation.Valid;
 @RestController
 @RequestMapping("/register")
 public class RegisterController {
-    private static final Logger LOGGER = LoggerFactory.getLogger(RegisterController.class);
     private final UserService userService;
     private final RegisterService registerService;
 
@@ -24,7 +21,6 @@ public class RegisterController {
 
     @PostMapping()
     public Result addUser(@Valid @RequestBody UserDto user) {
-        LOGGER.debug("Adding new user[{}]", user);
         userService.addUser(user);
         Result result = new Result();
         result.setResult(true);

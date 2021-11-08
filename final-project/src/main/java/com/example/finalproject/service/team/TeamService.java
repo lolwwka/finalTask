@@ -13,5 +13,6 @@ public interface TeamService {
     Team getTeam(String name);
 
     Team getTeam(int id);
+
     List<TeamDto> getTeams();
 }

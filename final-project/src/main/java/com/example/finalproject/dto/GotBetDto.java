@@ -22,16 +22,6 @@ public class GotBetDto {
         this.eventId = eventId;
     }
 
-    public String getBetTeam() {
-        return betTeam;
-    }
-
-    public void setBetTeam(String betTeam) {
-        this.betTeam = betTeam;
-    }
-
-    private String betTeam;
-
     public long getBetValue() {
         return betValue;
     }

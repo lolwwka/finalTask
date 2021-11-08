@@ -36,17 +36,6 @@ export class ProfileComponent {
   public getPaginatorData(event: PageEvent): PageEvent {
     this.lowValue = event.pageIndex * event.pageSize;
     this.highValue = this.lowValue + event.pageSize;
-   /* this.currentLimit = event.pageIndex * event.pageSize;
-    this.currentOffset = this.lowValue + event.pageSize;*/
     return event;
   }
-  /*private getBetsData(limit : number, offset : number){
-    this.http.get(environment.apiUrl + '/user/' + this.appComponent.getUserLogin() + '/?' + offset +'&' + limit,{
-      withCredentials: true
-    })
-      .toPromise()
-      .then((data : any) =>{
-        this.bets = <Array<any>>data.bets;
-      })
-  }*/
 }

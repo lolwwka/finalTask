@@ -2,28 +2,62 @@
   color: darkred;
   height: 100%;
   min-height: 100%">
-<h1>Greeting</h1>
+<div [hidden]="!error">
+  <p class="danger" style="font-size: 2em">Error: {{error}}</p>
+</div>
 <div [hidden]="!authenticated()">
-  <p style="font-size: 2em">Dear {{username}}</p>
-  <div [hidden]="!error">
-    <p class="danger">Error: {{error}}</p>
-  </div>
-  <div *ngFor="let event of events" style="text-align: left;">
-    <mat-list>
-      <mat-list-item style="
-      font-size: 1.5em;
-      height: 15px">
-        Tournament: {{event.tournamentName}}
-      </mat-list-item>
-      <mat-list-item>
-        First team : {{event.firstTeamName}} Second team : {{event.secondTeamName}}
-      </mat-list-item>
-      <a mat-button color="primary" [routerLink]="['/event', event.id]">
-        <mat-icon>right</mat-icon>
-        Go to event</a>
-    </mat-list>
-  </div>
-  <mat-paginator [length]="events.length" pageSize=20
+  <mat-grid-list cols="4" rowHeight="60px">
+    <mat-grid-tile colspan="4">
+      <h1>Greeting</h1>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="4">
+      <p style="font-size: 2em">Dear {{username}}</p>
+    </mat-grid-tile>
+    <ng-container *ngFor="let event of (Events | slice: lowValue : highValue)">
+      <mat-grid-tile style="font-size: 2.5em" colspan="2">
+        <p>Tournament: {{event.tournamentName}}</p>
+      </mat-grid-tile>
+      <mat-grid-tile style="font-size: 2.5em" colspan="2">
+        <p>Status: {{event.status}}</p>
+      </mat-grid-tile>
+      <mat-grid-tile colspan="1">
+        First team :
+      </mat-grid-tile>
+      <mat-grid-tile colspan="1">
+        {{event.firstTeamName}}
+      </mat-grid-tile>
+      <mat-grid-tile colspan="1">
+        Second team :
+      </mat-grid-tile>
+      <mat-grid-tile colspan="1">
+        {{event.secondTeamName}}
+      </mat-grid-tile>
+      <mat-grid-tile colspan="1">
+        <a mat-raised-button color="primary" [routerLink]="['/event', event.id]">
+          <mat-icon>right</mat-icon>
+          Go to event</a>
+      </mat-grid-tile>
+      <mat-grid-tile colspan="2">
+        <button *ngIf="admin()" mat-raised-button color="primary" (click)="changeStatus('Preparation',event.id, 'null')">OpenEvent</button>
+      </mat-grid-tile>
+      <mat-grid-tile colspan="1">
+        <button *ngIf="admin()" mat-raised-button color="primary" (click)="changeStatus('Playing',event.id, 'null')">CloseEvent</button>
+      </mat-grid-tile>
+      <mat-grid-tile colspan="2">
+        <mat-form-field appearance="fill">
+          <mat-label>Winning team</mat-label>
+          <select matNativeControl required [(ngModel)]="winningTeam">
+            <option [value]="event.firstTeamName">{{event.firstTeamName}}</option>
+            <option [value]="event.secondTeamName">{{event.secondTeamName}}</option>
+          </select>
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile colspan="2">
+        <button *ngIf="admin()" mat-raised-button color="primary" (click)="changeStatus('Finish', event.id, winningTeam)">FinishEvent</button>
+      </mat-grid-tile>
+    </ng-container>
+  </mat-grid-list>
+  <mat-paginator [length]="Events.length" pageSize=20
                  (page)="getPaginatorData($event)" [pageSizeOptions]="[10, 20, 30]"
                  showFirstLastButtons="false" style="background-color: yellowgreen">
   </mat-paginator>

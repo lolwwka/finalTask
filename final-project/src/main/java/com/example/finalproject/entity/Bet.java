@@ -11,6 +11,7 @@ public class Bet {
     private long id;
     private long amount;
     private String status;
+    private String teamName;
 
     @ManyToOne
     @JoinColumn(name = "visitor_id")
@@ -19,6 +20,7 @@ public class Bet {
     @ManyToOne
     @JoinColumn(name = "event_id")
     private Event event;
+
     public Bet() {
     }
 
@@ -56,5 +58,13 @@ public class Bet {
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    public String getTeamName() {
+        return teamName;
+    }
+
+    public void setTeamName(String teamName) {
+        this.teamName = teamName;
     }
 }

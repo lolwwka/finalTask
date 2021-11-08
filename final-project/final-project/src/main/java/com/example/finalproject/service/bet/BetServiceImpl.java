@@ -6,7 +6,7 @@ import com.example.finalproject.entity.Event;
 import com.example.finalproject.entity.User;
 import com.example.finalproject.repository.BetRepository;
 import com.example.finalproject.repository.EventRepository;
-import com.example.finalproject.repository.UserRepository;
+import com.example.finalproject.repository.VisitorRepository;
 import org.springframework.stereotype.Service;
 
 @Service

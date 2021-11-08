@@ -23,8 +23,8 @@ logging:
   level:
     com:
       example:
-        finalproject: DEBUG
-    org.springframework.web: DEBUG
+        finalproject: INFO
+    org.springframework.web: INFO
     org.hibernate: ERROR
 server:
   servlet:
@@ -33,3 +33,5 @@ server:
 server-mail:
   password: ${password}
   login: ${login}
+  host : ${host}
+  port : ${port}

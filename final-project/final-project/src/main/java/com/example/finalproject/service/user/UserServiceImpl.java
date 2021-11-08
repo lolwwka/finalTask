@@ -8,7 +8,7 @@ import com.example.finalproject.entity.Role;
 import com.example.finalproject.entity.User;
 import com.example.finalproject.repository.EventRepository;
 import com.example.finalproject.repository.RoleRepository;
-import com.example.finalproject.repository.UserRepository;
+import com.example.finalproject.repository.VisitorRepository;
 import com.example.finalproject.service.email.CustomEmailService;
 import com.example.finalproject.service.register.RegisterService;
 import org.springframework.security.crypto.password.PasswordEncoder;

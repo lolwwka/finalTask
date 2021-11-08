@@ -6,6 +6,7 @@ public class EventDtoWithBets {
     private long firstTeamAmount;
     private long secondTeamAmount;
     private String tournament;
+    private String status;
 
     public String getTournament() {
         return tournament;
@@ -45,5 +46,13 @@ public class EventDtoWithBets {
 
     public void setSecondTeamAmount(long secondTeamAmount) {
         this.secondTeamAmount = secondTeamAmount;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 }

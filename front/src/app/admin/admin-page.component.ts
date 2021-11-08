@@ -22,6 +22,10 @@ export class AdminPageComponent{
       })
   }
   createEvent(tournamentName : string){
+    if (this.firstTeamName == this.secondTeamName){
+      this.eventException = false;
+      return;
+    }
     this.http.post(environment.apiUrl + '/event', {
       firstTeamName : this.firstTeamName,
       secondTeamName : this.secondTeamName,
@@ -31,7 +35,7 @@ export class AdminPageComponent{
     })
       .toPromise()
       .then((data : any) =>{
-        if(data.result != 'true') this.eventException = false;
+        this.eventException = data.result == 'true';
       })
   }
   createTeam(addingTeamName : string){
@@ -42,10 +46,13 @@ export class AdminPageComponent{
     })
       .toPromise()
       .then((data : any) =>{
-        if(data.confirmed != 'true') this.teamException = false;
+        this.teamException = data.confirmed == 'true';
       })
   }
   getEventException(){
     return this.eventException;
+  }
+  getTeamException(){
+    return this.teamException;
   }
 }

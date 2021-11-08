@@ -17,6 +17,7 @@ public class Event {
     private long firstTeamAmount;
     private long secondTeamAmount;
     private String tournamentName;
+    private String status;
 
     @OneToMany(mappedBy = "event")
     private List<Bet> bets;
@@ -70,5 +71,13 @@ public class Event {
 
     public void setTournamentName(String tournamentName) {
         this.tournamentName = tournamentName;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 }

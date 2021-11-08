@@ -17,7 +17,7 @@ public class UserController {
     }
 
     @GetMapping(value = "/{login}")
-    public UserProfileDto getUserInfo(@PathVariable String login){
+    public UserProfileDto getUserInfo(@PathVariable String login) {
         return userService.getUserInfo(login);
     }
 }
