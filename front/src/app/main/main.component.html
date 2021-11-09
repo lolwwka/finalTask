@@ -8,10 +8,13 @@
 <div [hidden]="!authenticated()">
   <mat-grid-list cols="4" rowHeight="60px">
     <mat-grid-tile colspan="4">
-      <h1>Greeting</h1>
+      <p style="font-size: 1.5em">Greeting Dear {{username}}</p>
     </mat-grid-tile>
     <mat-grid-tile colspan="4">
-      <p style="font-size: 2em">Dear {{username}}</p>
+      <p *ngIf="!admin()" style="font-size: 1.5em">There you can find opened events</p>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="4">
+      <p *ngIf="admin()" style="font-size: 1.5em">There you can find all games </p>
     </mat-grid-tile>
     <ng-container *ngFor="let event of (Events | slice: lowValue : highValue)">
       <mat-grid-tile style="font-size: 2.5em" colspan="2">
@@ -44,8 +47,8 @@
         <button *ngIf="admin()" mat-raised-button color="primary" (click)="changeStatus('Playing',event.id, 'null')">CloseEvent</button>
       </mat-grid-tile>
       <mat-grid-tile colspan="2">
-        <mat-form-field appearance="fill">
-          <mat-label>Winning team</mat-label>
+        <mat-form-field appearance="fill" *ngIf="admin()">
+          <mat-label >Winning team</mat-label>
           <select matNativeControl required [(ngModel)]="winningTeam">
             <option [value]="event.firstTeamName">{{event.firstTeamName}}</option>
             <option [value]="event.secondTeamName">{{event.secondTeamName}}</option>

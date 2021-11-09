@@ -7,7 +7,7 @@ import com.example.finalproject.entity.Event;
 import com.example.finalproject.entity.Role;
 import com.example.finalproject.entity.Team;
 import com.example.finalproject.repository.EventRepository;
-import com.example.finalproject.repository.VisitorRepository;
+import com.example.finalproject.repository.UserRepository;
 import com.example.finalproject.service.team.TeamService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -20,12 +20,12 @@ import java.util.List;
 @Service
 public class EventServiceImpl implements EventService {
     private static final Logger LOGGER = LoggerFactory.getLogger(EventServiceImpl.class);
-    private final VisitorRepository visitorRepository;
+    private final UserRepository userRepository;
     private final EventRepository eventRepository;
     private final TeamService teamService;
 
-    public EventServiceImpl(VisitorRepository visitorRepository, EventRepository eventRepository, TeamService teamService) {
-        this.visitorRepository = visitorRepository;
+    public EventServiceImpl(UserRepository userRepository, EventRepository eventRepository, TeamService teamService) {
+        this.userRepository = userRepository;
         this.eventRepository = eventRepository;
         this.teamService = teamService;
     }
@@ -33,7 +33,7 @@ public class EventServiceImpl implements EventService {
     @Override
     public List<EventWithTeams> getAllEvents(String login) {
         ArrayList<Event> events = new ArrayList<>(eventRepository.findAll(Sort.by(Sort.Direction.DESC, "status")));
-        ArrayList<Role> roles = new ArrayList<>(visitorRepository.findByEmail(login).getRoles());
+        ArrayList<Role> roles = new ArrayList<>(userRepository.findByEmail(login).getRoles());
         boolean isAdmin = false;
         for (Role role : roles) {
             if (role.getName().equals("ADMIN")) {

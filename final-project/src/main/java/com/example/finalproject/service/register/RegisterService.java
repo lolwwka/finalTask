@@ -1,7 +1,9 @@
 package com.example.finalproject.service.register;
 
+import com.example.finalproject.dto.Result;
+
 public interface RegisterService {
-    boolean checkCode(String code);
+    Result checkCode(String code);
 
     String generateUserCode(String email);
 }

@@ -18,7 +18,12 @@ export class AppComponent {
     }, () => {
       if (window.location.pathname == '/confirm') {
         this.router.navigateByUrl(location.path());
-      } else {
+        return;
+      }
+      if (window.location.pathname == '/change'){
+        this.router.navigateByUrl(location.path());
+      }
+      else {
         this.router.navigateByUrl('/login');
       }
     });

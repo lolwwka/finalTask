@@ -1,7 +1,7 @@
 package com.example.finalproject.controller;
 
 import com.example.finalproject.dto.Result;
-import com.example.finalproject.service.money.BalanceService;
+import com.example.finalproject.service.balance.BalanceService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.PostMapping;

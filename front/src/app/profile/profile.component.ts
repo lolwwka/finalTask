@@ -15,8 +15,6 @@ export class ProfileComponent {
   bets : Array<any> = [];
   lowValue: number = 0;
   highValue: number = 4;
-  currentLimit : any;
-  currentOffset : any;
 
   constructor(private app: AppService, private appComponent: AppComponent,private router: Router, private http: HttpClient) {
     this.userName = appComponent.getUserLogin();

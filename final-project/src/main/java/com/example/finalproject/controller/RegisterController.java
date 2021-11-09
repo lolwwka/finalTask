@@ -29,8 +29,6 @@ public class RegisterController {
 
     @PostMapping(value = "/{code}")
     public Result checkCode(@PathVariable(value = "code") String code) {
-        Result result = new Result();
-        result.setResult(registerService.checkCode(code));
-        return result;
+        return registerService.checkCode(code);
     }
 }

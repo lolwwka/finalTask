@@ -1,0 +1,56 @@
+<body>
+<div [hidden]="!changing" style="
+  background-color: whitesmoke;
+  color: darkred;
+  width: 97vw;
+  position: absolute;">
+  <mat-grid-list cols="2" rowHeight="80px">
+    <mat-grid-tile colspan="2">
+      <p style="font-size: 2em; color: #361a1a">To change you're password fill you're email and click button below</p>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="1">
+      <mat-form-field appearance="outline">
+        <mat-label>You're email</mat-label>
+        <input [(ngModel)]="email" matInput placeholder="example@outlook.com">
+      </mat-form-field>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="1">
+      <button mat-raised-button (click)="sendCodeToUser()" color="warn">Submit</button>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <p style="font-size: 2em; color: #361a1a">{{processText}}</p>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
+<div [hidden]="changing" style="
+  background-color: whitesmoke;
+  color: darkred;
+  width: 97vw;
+  position: absolute;">
+  <mat-grid-list cols="2" rowHeight="80px">
+    <mat-grid-tile colspan="2">
+      <p *ngIf="correctCode" style="font-size: 2em; color: #361a1a">Correct code. Please make new password</p>
+      <p *ngIf="!correctCode" style="font-size: 2em; color: #361a1a">Incorrect code. You already changed password</p>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="1">
+      <mat-form-field appearance="outline">
+        <mat-label>You're new password</mat-label>
+        <input [(ngModel)]="password" matInput placeholder="soHardPassword">
+      </mat-form-field>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="1">
+      <button mat-raised-button (click)="changePassword()" color="warn">Submit</button>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="2">
+    <div [hidden]="!changed" style="font-size: 2em; color: #361a1a">Password is changed
+      <button mat-raised-button color="primary" [routerLink]="['/login']">Login</button>
+    </div>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="2">
+    <div [hidden]="changed" style="font-size: 2em; color: #361a1a">Password isn't changed
+      Try again later
+    </div>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
+</body>

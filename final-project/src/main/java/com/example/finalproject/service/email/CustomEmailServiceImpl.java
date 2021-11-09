@@ -20,12 +20,18 @@ public class CustomEmailServiceImpl implements CustomEmailService {
     }
 
     @Override
-    public boolean sendCodeEmail(String email, String code) throws MessagingException {
+    public boolean sendCodeEmail(String email, String code, int option) throws MessagingException {
+        String htmlMessage;
         MimeMessage message = emailSender.createMimeMessage();
         boolean multipart = true;
         MimeMessageHelper helper = new MimeMessageHelper(message, multipart, "utf-8");
-        String htmlMessage = "<h3>To confirm registration, please follow the link</h3>"
-                + "<a href = \"http://localhost:4200/confirm/?code=" + code + "\"> Click !!!";
+        if(option == 1) {
+            htmlMessage = "<h3>To confirm registration, please follow the link</h3>"
+                    + "<a href = \"http://localhost:4200/confirm/?code=" + code + "\"> Click !!!";
+        } else{
+            htmlMessage = "<h3>To change password, please follow the link</h3>"
+                    + "<a href = \"http://localhost:4200/change/?code=" + code + "\"> Click !!!";
+        }
         message.setContent(htmlMessage, "text/html");
         helper.setFrom("<" + mailProperties.getLogin() + ">");
         helper.setTo(email + "<" + email + ">");
@@ -33,5 +39,4 @@ public class CustomEmailServiceImpl implements CustomEmailService {
         this.emailSender.send(message);
         return true;
     }
-
 }

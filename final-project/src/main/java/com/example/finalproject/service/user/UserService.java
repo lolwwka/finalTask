@@ -20,4 +20,8 @@ public interface UserService {
     UserProfileDto getUserInfo(String login);
 
     Set<String> convertUserRoles(Set<Role> roles);
+
+    boolean sendUserCodeChangePassword(String email);
+
+    boolean changeUserPassword(String email, String password);
 }

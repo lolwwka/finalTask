@@ -36,7 +36,7 @@
         <button mat-flat-button color="accent" (click)="createEvent(tournamentName.value)">Submit</button>
       </mat-grid-tile>
     </div>
-    <div [hidden]="getEventException()" style="
+    <div [hidden]="!getEventException()" style="
          font-size: 2.5em;
          text-align: center;
          height: 3em;

@@ -46,7 +46,7 @@ export class AdminPageComponent{
     })
       .toPromise()
       .then((data : any) =>{
-        this.teamException = data.confirmed == 'true';
+        this.teamException = data.result == 'true';
       })
   }
   getEventException(){

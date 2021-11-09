@@ -8,7 +8,6 @@ import {LoginComponent} from '../login/login.component';
 import {AppComponent} from './app.component';
 import {AppService} from './app.service';
 import {RegisterComponent} from "../register/register.component";
-import {ConfirmRegisterComponent} from "../register/confirmRegister.component"
 import {MainComponent} from "../main/main.component";
 import {ProfileComponent} from "../profile/profile.component";
 import {BalanceComponent} from "../balance/balance.component";
@@ -23,6 +22,8 @@ import {MatListModule} from "@angular/material/list";
 import {EventComponent} from "../event/event.component";
 import {MatPaginatorModule} from "@angular/material/paginator";
 import {MatOptionModule} from "@angular/material/core";
+import {ChangePassComponent} from "../change-password/changePass.component";
+import {ConfirmRegisterComponent} from "../register/confirmRegister.component";
 
 
 @Injectable()
@@ -46,7 +47,8 @@ const routes: Routes = [
   {path: 'event/:id', component: EventComponent},
   {path: 'profile', component: ProfileComponent},
   {path: 'balance', component: BalanceComponent},
-  {path: 'admin', component: AdminPageComponent}
+  {path: 'admin', component: AdminPageComponent},
+  {path: 'change', component: ChangePassComponent}
 ];
 
 @NgModule({
@@ -59,7 +61,8 @@ const routes: Routes = [
     EventComponent,
     ProfileComponent,
     BalanceComponent,
-    AdminPageComponent
+    AdminPageComponent,
+    ChangePassComponent
   ],
     imports: [
         RouterModule.forRoot(routes),
